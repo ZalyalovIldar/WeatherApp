@@ -10,7 +10,7 @@ import Foundation
 
 class WeatherConfigurator {
     
-    static func setupModule(with viewController: WeatherViewController) {
+    static func setupModule(with viewController: WeatherViewController) -> WeatherModuleInput {
         let presenter = WeatherPresenter()
         let interactor = WeatherInteractor()
         let router = WeatherRouter()
@@ -25,6 +25,8 @@ class WeatherConfigurator {
         interactor.presenter = presenter
         
         router.alertsFactory = alertsFactory
+        
+        return presenter
     }
     
 }

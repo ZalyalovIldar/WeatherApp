@@ -10,6 +10,17 @@ import Foundation
 
 class WeatherInteractor: WeatherInteractorInput {
     
+    var currentCity: String?
+    var currentCoordinates: Coordinates?
+    
     weak var presenter: WeatherInteractorOutput!
+    
+    func setCity(_ city: String) {
+        currentCity = city
+    }
+    
+    func setCoordinates(_ coordinates: Coordinates) {
+        currentCoordinates = coordinates
+    }
     
 }

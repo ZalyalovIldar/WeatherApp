@@ -14,4 +14,14 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     var interactor: WeatherInteractorInput!
     var router: WeatherRouterProtocol!
     
+    //MARK: - module input
+    
+    func setCity(_ city: String) {
+        interactor.setCity(city)
+    }
+    
+    func setCoordinates(longitude: Double, latidude: Double) {
+        interactor.setCoordinates(Coordinates(longitude: longitude, latitude: latidude))
+    }
+    
 }

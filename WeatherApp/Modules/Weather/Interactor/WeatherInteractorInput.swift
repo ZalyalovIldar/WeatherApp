@@ -10,6 +10,14 @@ import Foundation
 
 protocol WeatherInteractorInput: class {
     
+    /// To get the weather by city name
+    ///
+    /// - Parameter city: name of city
+    func setCity(_ city: String)
     
+    /// To get the weather by coordinates
+    ///
+    /// - Parameter coordinates: coordinates of pin
+    func setCoordinates(_ coordinates: Coordinates)
     
 }
