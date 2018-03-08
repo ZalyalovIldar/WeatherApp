@@ -13,9 +13,7 @@ class WeatherServiceImplementation: WeatherService {
     var apiProvider: ApiProvider!
     let dataErrorMessage = "Ошибка при получении данных"
     
-    func getWeather(with city: String, completionBlock: @escaping (Response<WeatherInfo>) -> Void) {
-        let request = GetCityWeatherRequest(city: city)
-        
+    func getWeather(with request: Request, completionBlock: @escaping (Response<WeatherInfo>) -> Void) {
         apiProvider.makeRequest(with: request) { [weak self] (data) in
             guard let strongSelf = self else { return }
             guard let data = data else {

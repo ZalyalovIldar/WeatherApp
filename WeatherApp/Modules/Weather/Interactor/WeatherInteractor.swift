@@ -26,14 +26,30 @@ class WeatherInteractor: WeatherInteractorInput {
     
     func getWeatherFromCity() {
         guard let city = currentCity else { return }
+        let request = GetCityWeatherRequest(city: city)
         
-        weatherService.getWeather(with: city) { [weak self] (response) in
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else { return }
-                switch response {
-                case .success(let weatherInfo): strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
-                case .error(let errorMessage): strongSelf.presenter.getWeatherFailure(with: errorMessage)
-                }
+        weatherService.getWeather(with: request) { [weak self] (response) in
+            guard let strongSelf = self else { return }
+            strongSelf.preparePresentet(with: response)
+        }
+    }
+    
+    func getWeatherFromCoordinates() {
+        guard let coordinates = currentCoordinates else { return }
+        let request = GetLocationWeatherRequest(longitude: coordinates.longitude, latitude: coordinates.latitude)
+        
+        weatherService.getWeather(with: request) { [weak self] (response) in
+            guard let strongSelf = self else { return }
+            strongSelf.preparePresentet(with: response)
+        }
+    }
+    
+    private func preparePresentet(with response: Response<WeatherInfo>) {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            switch response {
+            case .success(let weatherInfo): strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
+            case .error(let errorMessage): strongSelf.presenter.getWeatherFailure(with: errorMessage)
             }
         }
     }

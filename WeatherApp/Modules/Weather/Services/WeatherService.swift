@@ -10,6 +10,6 @@ import Foundation
 
 protocol WeatherService: class {
     
-     func getWeather(with city: String, completionBlock: @escaping (Response<WeatherInfo>) -> Void)
+     func getWeather(with request: Request, completionBlock: @escaping (Response<WeatherInfo>) -> Void)
     
 }

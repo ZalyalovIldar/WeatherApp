@@ -27,7 +27,7 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     // MARK: - view output
     
     func viewIsReady() {
-        interactor.getWeatherFromCity()
+        interactor.getWeatherFromCoordinates()
     }
     
     // MARK: - interactor output

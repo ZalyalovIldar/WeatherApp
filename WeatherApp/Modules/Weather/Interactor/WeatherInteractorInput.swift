@@ -22,4 +22,6 @@ protocol WeatherInteractorInput: class {
     
     func getWeatherFromCity()
     
+    func getWeatherFromCoordinates()
+    
 }
