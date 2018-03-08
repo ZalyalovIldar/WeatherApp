@@ -8,5 +8,6 @@ target 'WeatherApp' do
   # Pods for WeatherApp
 
   pod 'SDWebImage', '~> 4.0'
+  pod 'Alamofire', '~> 4.7'
 
 end

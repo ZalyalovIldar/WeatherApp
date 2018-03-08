@@ -10,6 +10,7 @@ import Foundation
 
 protocol WeatherInteractorOutput: class {
     
-    
+    func getWeatherSuccess(with weatherInfo: WeatherInfo)
+    func getWeatherFailure(with message: String)
     
 }

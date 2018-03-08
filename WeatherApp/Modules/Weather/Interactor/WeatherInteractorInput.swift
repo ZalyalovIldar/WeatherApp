@@ -20,4 +20,6 @@ protocol WeatherInteractorInput: class {
     /// - Parameter coordinates: coordinates of pin
     func setCoordinates(_ coordinates: Coordinates)
     
+    func getWeatherFromCity()
+    
 }

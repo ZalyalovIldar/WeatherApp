@@ -15,6 +15,10 @@ class WeatherConfigurator {
         let interactor = WeatherInteractor()
         let router = WeatherRouter()
         let alertsFactory = CommonAlertsFactory()
+        let weatherService = WeatherServiceImplementation()
+        let apiProvier = WeatherApiProvider()
+        
+        weatherService.apiProvider = apiProvier
         
         viewController.presenter = presenter
         
@@ -23,8 +27,13 @@ class WeatherConfigurator {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.weatherService = weatherService
         
         router.alertsFactory = alertsFactory
+        router.view = viewController
+        
+        //only test!
+        presenter.setCity("Moscow")
         
         return presenter
     }

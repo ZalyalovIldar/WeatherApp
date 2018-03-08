@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--City-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -129,10 +129,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="City" id="Sbu-i5-PxC"/>
+                    <connections>
+                        <outlet property="infoCollectionView" destination="SrI-wr-KwW" id="mQ9-ig-cMA"/>
+                        <outlet property="stateLabel" destination="5AJ-fC-hvU" id="SKb-Hz-137"/>
+                        <outlet property="sunriseLabel" destination="841-5Y-E6j" id="rLS-wM-Q3x"/>
+                        <outlet property="sunsetLabel" destination="Dyt-9J-0oU" id="4n0-N5-bqa"/>
+                        <outlet property="temperatureLabel" destination="Pdn-hh-OOG" id="tPl-uM-g0J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="EQs-6Y-XRF" customClass="WeatherInitializer" customModule="WeatherApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="BYZ-38-t0r" id="YtT-mc-EaS"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="426" y="32"/>
+            <point key="canvasLocation" x="434" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NsI-2V-bbw">
@@ -150,7 +162,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydf-tc-9pG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-385" y="32"/>
+            <point key="canvasLocation" x="-436" y="32"/>
         </scene>
     </scenes>
 </document>

@@ -10,9 +10,10 @@ import Foundation
 
 class WeatherInteractor: WeatherInteractorInput {
     
-    var currentCity: String?
-    var currentCoordinates: Coordinates?
-    
+    private var currentCity: String?
+    private var currentCoordinates: Coordinates?
+
+    var weatherService: WeatherService!
     weak var presenter: WeatherInteractorOutput!
     
     func setCity(_ city: String) {
@@ -21,6 +22,20 @@ class WeatherInteractor: WeatherInteractorInput {
     
     func setCoordinates(_ coordinates: Coordinates) {
         currentCoordinates = coordinates
+    }
+    
+    func getWeatherFromCity() {
+        guard let city = currentCity else { return }
+        
+        weatherService.getWeather(with: city) { [weak self] (response) in
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                switch response {
+                case .success(let weatherInfo): strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
+                case .error(let errorMessage): strongSelf.presenter.getWeatherFailure(with: errorMessage)
+                }
+            }
+        }
     }
     
 }
