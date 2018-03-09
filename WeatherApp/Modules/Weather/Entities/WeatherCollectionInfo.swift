@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Weather info for collection view
 struct WeatherCollectionInfo {
     
     let title: String

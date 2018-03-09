@@ -23,6 +23,9 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     var currentWeatherInfoTitle: String?
     var currentWeatherInfo: String?
     let infoCellIdentifier = "infoCell"
+    
+    let collectionViewBorderWidth: CGFloat = 1.0
+    let collectionViewCornerRadius: CGFloat = 3.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +39,8 @@ class WeatherViewController: UIViewController, WeatherViewInput {
         infoCollectionView.register(infoCellNib, forCellWithReuseIdentifier: infoCellIdentifier)
         
         infoCollectionView.layer.borderColor = UIColor.black.cgColor
-        infoCollectionView.layer.borderWidth = 1.0
-        infoCollectionView.layer.cornerRadius = 3.0
+        infoCollectionView.layer.borderWidth = collectionViewBorderWidth
+        infoCollectionView.layer.cornerRadius = collectionViewCornerRadius
     }
     
     func setState(_ state: String) {
