@@ -27,7 +27,22 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     // MARK: - view output
     
     func viewIsReady() {
+        view.prepareCollectionView()
         interactor.getWeatherFromCoordinates()
+    }
+    
+    func updateCurrentWeatherInfo(at indexPath: IndexPath) {
+        guard let weatherCollectionInfo = interactor.getWeatherCollectionInfo() else { return }
+        let row = indexPath.row
+        let weatherInfo = weatherCollectionInfo[row]
+        
+        view.setCurrentWeatherInfoTitle(weatherInfo.title)
+        view.setCurrentWeatherInfo(weatherInfo.info)
+    }
+    
+    func updateCurrentWeatherInfoCount() {
+        guard let weatherCollectionInfo = interactor.getWeatherCollectionInfo() else { return }
+        view.setCurrentWeatherInfoCount(weatherCollectionInfo.count)
     }
     
     // MARK: - interactor output
@@ -49,6 +64,7 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
         view.setSunsetTime(sunriseTime)
         view.setSunsetTime(sunsetTime)
         view.setCityTitle(weatherInfo.name)
+        view.reloadCollectionView()
     }
     
     func getWeatherFailure(with message: String) {

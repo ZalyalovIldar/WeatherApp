@@ -11,5 +11,7 @@ import Foundation
 protocol WeatherViewOutput: class {
     
     func viewIsReady()
+    func updateCurrentWeatherInfo(at indexPath: IndexPath)
+    func updateCurrentWeatherInfoCount()
     
 }

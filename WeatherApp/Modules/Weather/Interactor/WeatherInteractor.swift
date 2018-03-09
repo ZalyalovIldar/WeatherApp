@@ -12,9 +12,12 @@ class WeatherInteractor: WeatherInteractorInput {
     
     private var currentCity: String?
     private var currentCoordinates: Coordinates?
+    private var currentWeatherCollectionInfo: [WeatherCollectionInfo]?
 
     var weatherService: WeatherService!
     weak var presenter: WeatherInteractorOutput!
+    
+    private let noDataMessage = "Нет данных"
     
     func setCity(_ city: String) {
         currentCity = city
@@ -30,7 +33,7 @@ class WeatherInteractor: WeatherInteractorInput {
         
         weatherService.getWeather(with: request) { [weak self] (response) in
             guard let strongSelf = self else { return }
-            strongSelf.preparePresentet(with: response)
+            strongSelf.preparePresenter(with: response)
         }
     }
     
@@ -40,18 +43,25 @@ class WeatherInteractor: WeatherInteractorInput {
         
         weatherService.getWeather(with: request) { [weak self] (response) in
             guard let strongSelf = self else { return }
-            strongSelf.preparePresentet(with: response)
+            strongSelf.preparePresenter(with: response)
         }
     }
     
-    private func preparePresentet(with response: Response<WeatherInfo>) {
+    private func preparePresenter(with response: Response<WeatherInfo>) {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             switch response {
-            case .success(let weatherInfo): strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
+            case .success(let weatherInfo):
+                strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
+                strongSelf.currentWeatherCollectionInfo = weatherInfo.getCollectionInfo()
             case .error(let errorMessage): strongSelf.presenter.getWeatherFailure(with: errorMessage)
             }
         }
+    }
+    
+    func getWeatherCollectionInfo() -> [WeatherCollectionInfo]? {
+        guard let weatherCollectionInfo = currentWeatherCollectionInfo else { return nil }
+        return weatherCollectionInfo
     }
     
 }
