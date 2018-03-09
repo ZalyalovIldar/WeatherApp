@@ -30,6 +30,9 @@
 		CB57C8BC205064EB00B84F39 /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8BB205064EB00B84F39 /* WeatherRouter.swift */; };
 		CB57C8BE2050659500B84F39 /* WeatherModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8BD2050659500B84F39 /* WeatherModuleInput.swift */; };
 		CB57C8C12050743500B84F39 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8C02050743500B84F39 /* Coordinates.swift */; };
+		CB6757DF2052A5890080ED3B /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6757DD2052A5890080ED3B /* InfoCollectionViewCell.swift */; };
+		CB6757E02052A5890080ED3B /* InfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6757DE2052A5890080ED3B /* InfoCollectionViewCell.xib */; };
+		CB6757E42052CD5E0080ED3B /* WeatherCollectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6757E32052CD5E0080ED3B /* WeatherCollectionInfo.swift */; };
 		CB67AFF5205174320024BB75 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFF4205174320024BB75 /* WeatherService.swift */; };
 		CB67AFF7205174590024BB75 /* WeatherServiceImpementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFF6205174590024BB75 /* WeatherServiceImpementation.swift */; };
 		CB67AFFB205174950024BB75 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFFA205174950024BB75 /* Request.swift */; };
@@ -66,6 +69,9 @@
 		CB57C8BB205064EB00B84F39 /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
 		CB57C8BD2050659500B84F39 /* WeatherModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModuleInput.swift; sourceTree = "<group>"; };
 		CB57C8C02050743500B84F39 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		CB6757DD2052A5890080ED3B /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB6757DE2052A5890080ED3B /* InfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CB6757E32052CD5E0080ED3B /* WeatherCollectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionInfo.swift; sourceTree = "<group>"; };
 		CB67AFF4205174320024BB75 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		CB67AFF6205174590024BB75 /* WeatherServiceImpementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceImpementation.swift; sourceTree = "<group>"; };
 		CB67AFFA205174950024BB75 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 				CB57C8A82050636900B84F39 /* WeatherViewController.swift */,
 				CB57C8AA2050637F00B84F39 /* WeatherViewInput.swift */,
 				CB57C8AC2050638E00B84F39 /* WeatherViewOutput.swift */,
+				CB6757DC2052A5520080ED3B /* InfoCollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,8 +257,18 @@
 			children = (
 				CB57C8C02050743500B84F39 /* Coordinates.swift */,
 				CB22521A205196C500FF636A /* WeatherInfo.swift */,
+				CB6757E32052CD5E0080ED3B /* WeatherCollectionInfo.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CB6757DC2052A5520080ED3B /* InfoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CB6757DD2052A5890080ED3B /* InfoCollectionViewCell.swift */,
+				CB6757DE2052A5890080ED3B /* InfoCollectionViewCell.xib */,
+			);
+			path = InfoCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		CB67AFF3205173CD0024BB75 /* Services */ = {
@@ -363,6 +380,7 @@
 			files = (
 				7C7CC959204D91C2006EBF80 /* LaunchScreen.storyboard in Resources */,
 				7C7CC956204D91C2006EBF80 /* Assets.xcassets in Resources */,
+				CB6757E02052A5890080ED3B /* InfoCollectionViewCell.xib in Resources */,
 				7C7CC954204D91C2006EBF80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +450,7 @@
 			files = (
 				CB57C8A0204FD7F200B84F39 /* CommonAlertsFactory.swift in Sources */,
 				CB57C8B62050644400B84F39 /* WeatherInteractor.swift in Sources */,
+				CB6757DF2052A5890080ED3B /* InfoCollectionViewCell.swift in Sources */,
 				CB57C89B204FD58300B84F39 /* Storyboards.swift in Sources */,
 				CB67AFF7205174590024BB75 /* WeatherServiceImpementation.swift in Sources */,
 				CB67AFFF205180FC0024BB75 /* GetCityWeatherRequest.swift in Sources */,
@@ -450,6 +469,7 @@
 				CB67AFFD205175E10024BB75 /* WeatherApiProvider.swift in Sources */,
 				FF6BF4742051C98700FB81A2 /* WeatherInitializer.swift in Sources */,
 				CB57C8A92050636900B84F39 /* WeatherViewController.swift in Sources */,
+				CB6757E42052CD5E0080ED3B /* WeatherCollectionInfo.swift in Sources */,
 				CB57C89E204FD78D00B84F39 /* CommonAlertsFactoryProtocol.swift in Sources */,
 				CB57C8BA2050648900B84F39 /* WeatherRouterProtocol.swift in Sources */,
 				CB57C899204FD54800B84F39 /* ReusableView.swift in Sources */,
@@ -595,6 +615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W56K4E4L5F;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/Commons/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOSLab.WeatherApp;
@@ -610,6 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W56K4E4L5F;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/Commons/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOSLab.WeatherApp;
