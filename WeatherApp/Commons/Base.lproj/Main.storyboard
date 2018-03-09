@@ -134,6 +134,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="City" id="Sbu-i5-PxC"/>
                     <connections>
+                        <outlet property="cityImageView" destination="BIO-u6-pjr" id="oqK-74-cEQ"/>
                         <outlet property="infoCollectionView" destination="SrI-wr-KwW" id="mQ9-ig-cMA"/>
                         <outlet property="stateLabel" destination="5AJ-fC-hvU" id="SKb-Hz-137"/>
                         <outlet property="sunriseLabel" destination="841-5Y-E6j" id="rLS-wM-Q3x"/>

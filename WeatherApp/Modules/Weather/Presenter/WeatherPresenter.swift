@@ -24,11 +24,16 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
         interactor.setCoordinates(Coordinates(longitude: longitude, latitude: latidude))
     }
     
+    func setPlaceID(_ placeID: String) {
+        interactor.setPlaceID(placeID)
+    }
+    
     // MARK: - view output
     
     func viewIsReady() {
         view.prepareCollectionView()
         interactor.getWeatherFromCoordinates()
+        interactor.loadPhotoForPlace()
     }
     
     func updateCurrentWeatherInfo(at indexPath: IndexPath) {
@@ -69,6 +74,13 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     
     func getWeatherFailure(with message: String) {
         router.showErrorAlert(with: message)
+    }
+    
+    func didFinishLoadImage(with response: Response<PhotoModel>) {
+        switch response {
+            case .success(let photoModel): view.setCityImage(photoModel.photo)
+            case .error(let errorMessage): router.showErrorAlert(with: errorMessage)
+        }
     }
     
 }

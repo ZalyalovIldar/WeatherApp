@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var infoCollectionView: UICollectionView!
+    @IBOutlet weak var cityImageView: UIImageView!
     
     var presenter: WeatherViewOutput!
     
@@ -77,6 +78,10 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     
     func reloadCollectionView() {
         infoCollectionView.reloadData()
+    }
+    
+    func setCityImage(_ image: UIImage) {
+        cityImageView.image = image
     }
 
 }

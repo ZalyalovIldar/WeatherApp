@@ -6,7 +6,7 @@
 //  Copyright © 2018 iOSLab. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol WeatherViewInput: class {
     
@@ -20,5 +20,6 @@ protocol WeatherViewInput: class {
     func setCurrentWeatherInfo(_ info: String)
     func setCurrentWeatherInfoCount(_ count: Int)
     func reloadCollectionView()
+    func setCityImage(_ image: UIImage)
     
 }

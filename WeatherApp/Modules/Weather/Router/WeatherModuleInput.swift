@@ -22,4 +22,6 @@ protocol WeatherModuleInput: class {
     ///   - latidude: latitude coordinate
     func setCoordinates(longitude: Double, latidude: Double)
     
+    func setPlaceID(_ placeID: String)
+    
 }
