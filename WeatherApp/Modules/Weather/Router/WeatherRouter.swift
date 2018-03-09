@@ -13,4 +13,9 @@ class WeatherRouter: WeatherRouterProtocol {
     weak var view: UIViewController!
     var alertsFactory: CommonAlertsFactoryProtocol!
     
+    func showErrorAlert(with message: String) {
+        let alert = alertsFactory.getErrorAlert(with: message)
+        view.present(alert, animated: true, completion: nil)
+    }
+    
 }

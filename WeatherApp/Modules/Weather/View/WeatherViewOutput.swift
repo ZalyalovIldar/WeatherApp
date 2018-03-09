@@ -10,6 +10,6 @@ import Foundation
 
 protocol WeatherViewOutput: class {
     
-    
+    func viewIsReady()
     
 }
