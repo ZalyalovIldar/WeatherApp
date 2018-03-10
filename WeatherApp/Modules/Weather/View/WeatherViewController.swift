@@ -15,6 +15,8 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var infoCollectionView: UICollectionView!
+    @IBOutlet weak var infoPageControl: UIPageControl!
+    
     
     var presenter: WeatherViewOutput!
     
@@ -78,6 +80,10 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     func reloadCollectionView() {
         infoCollectionView.reloadData()
     }
+    
+    func updatePageCount() {
+        infoPageControl.numberOfPages = currentWeatherInfoCount ?? 0
+    }
 
 }
 
@@ -104,6 +110,10 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        infoPageControl.currentPage = indexPath.row
     }
     
 }

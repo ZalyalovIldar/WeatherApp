@@ -40,14 +40,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-15°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-hh-OOG">
-                                        <rect key="frame" x="75" y="76.5" width="225" height="107.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-hh-OOG">
+                                        <rect key="frame" x="112" y="76.5" width="151.5" height="107.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Pdn-hh-OOG" firstAttribute="centerY" secondItem="4TW-Rb-3PQ" secondAttribute="centerY" id="6bV-b6-9Kt"/>
                                     <constraint firstAttribute="height" constant="259" id="Efj-ss-01A"/>
@@ -72,8 +72,8 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="841-5Y-E6j">
-                                                <rect key="frame" x="0.0" y="20.5" width="47.5" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="841-5Y-E6j">
+                                                <rect key="frame" x="0.0" y="20.5" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -89,8 +89,8 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyt-9J-0oU">
-                                                <rect key="frame" x="0.0" y="20.5" width="47.5" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyt-9J-0oU">
+                                                <rect key="frame" x="0.0" y="20.5" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -117,14 +117,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="YGm-ls-LFR"/>
                                 </connections>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="irD-EO-jgA">
+                                <rect key="frame" x="168" y="512" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.86852823129826828" green="0.95715355660039803" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SrI-wr-KwW" firstAttribute="top" secondItem="Wma-Oy-zxI" secondAttribute="bottom" constant="8" id="6p5-Ia-a0E"/>
                             <constraint firstItem="4TW-Rb-3PQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9tV-8d-Z1k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wma-Oy-zxI" secondAttribute="trailing" constant="8" id="AvJ-oK-7Zs"/>
+                            <constraint firstItem="irD-EO-jgA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DRY-4b-JaN"/>
                             <constraint firstItem="SrI-wr-KwW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="H1c-tg-ec7"/>
                             <constraint firstItem="Wma-Oy-zxI" firstAttribute="top" secondItem="4TW-Rb-3PQ" secondAttribute="bottom" constant="8" id="MiD-2Q-4QZ"/>
+                            <constraint firstItem="irD-EO-jgA" firstAttribute="bottom" secondItem="SrI-wr-KwW" secondAttribute="bottom" id="VTt-ES-cil"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SrI-wr-KwW" secondAttribute="trailing" constant="8" id="bZi-tl-Qrk"/>
                             <constraint firstItem="4TW-Rb-3PQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pTp-YR-y6h"/>
                             <constraint firstItem="Wma-Oy-zxI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="rUL-ZL-WVq"/>
@@ -135,6 +142,7 @@
                     <navigationItem key="navigationItem" title="City" id="Sbu-i5-PxC"/>
                     <connections>
                         <outlet property="infoCollectionView" destination="SrI-wr-KwW" id="mQ9-ig-cMA"/>
+                        <outlet property="infoPageControl" destination="irD-EO-jgA" id="e8N-XE-mYA"/>
                         <outlet property="stateLabel" destination="5AJ-fC-hvU" id="SKb-Hz-137"/>
                         <outlet property="sunriseLabel" destination="841-5Y-E6j" id="rLS-wM-Q3x"/>
                         <outlet property="sunsetLabel" destination="Dyt-9J-0oU" id="4n0-N5-bqa"/>

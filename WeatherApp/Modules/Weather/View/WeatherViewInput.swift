@@ -20,5 +20,6 @@ protocol WeatherViewInput: class {
     func setCurrentWeatherInfo(_ info: String)
     func setCurrentWeatherInfoCount(_ count: Int)
     func reloadCollectionView()
+    func updatePageCount()
     
 }

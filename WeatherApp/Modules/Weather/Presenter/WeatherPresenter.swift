@@ -43,6 +43,7 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     func updateCurrentWeatherInfoCount() {
         guard let weatherCollectionInfo = interactor.getWeatherCollectionInfo() else { return }
         view.setCurrentWeatherInfoCount(weatherCollectionInfo.count)
+        view.updatePageCount()
     }
     
     // MARK: - interactor output
