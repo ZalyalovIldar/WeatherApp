@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import GooglePlaces
 
 class WeatherInteractor: WeatherInteractorInput {
     
     private var currentCity: String?
     private var currentCoordinates: Coordinates?
+    private var currentPlaceID: String?
     private var currentWeatherCollectionInfo: [WeatherCollectionInfo]?
 
     var weatherService: WeatherService!
     weak var presenter: WeatherInteractorOutput!
     
     private let noDataMessage = "Нет данных"
+    private let errorLoadImageMessage = "Не удалось получить фото"
     
     func setCity(_ city: String) {
         currentCity = city
@@ -25,6 +28,10 @@ class WeatherInteractor: WeatherInteractorInput {
     
     func setCoordinates(_ coordinates: Coordinates) {
         currentCoordinates = coordinates
+    }
+    
+    func setPlaceID(_ placeID: String) {
+        currentPlaceID = placeID
     }
     
     func getWeatherFromCity() {
@@ -62,6 +69,37 @@ class WeatherInteractor: WeatherInteractorInput {
     func getWeatherCollectionInfo() -> [WeatherCollectionInfo]? {
         guard let weatherCollectionInfo = currentWeatherCollectionInfo else { return nil }
         return weatherCollectionInfo
+    }
+    
+    func loadPhotoForPlace() {
+        guard let placeID = currentPlaceID else { return }
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { [weak self] (photos, error) in
+            guard let strongSelf = self else { return }
+            
+            if let error = error {
+                strongSelf.presenter.didFinishLoadImage(with: .error(strongSelf.errorLoadImageMessage))
+                print("Error: \(error.localizedDescription)")
+            } else {
+                guard let photos = photos?.results else { return }
+                let randomPhotoNumber: Int = Int(arc4random_uniform(UInt32(photos.count)))
+                strongSelf.loadImageForMetadata(photoMetadata: photos[randomPhotoNumber])
+            }
+        }
+    }
+    
+    private func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata) { [weak self] (photo, error) in
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                if let error = error {
+                    strongSelf.presenter.didFinishLoadImage(with: .error(strongSelf.errorLoadImageMessage))
+                    print("Error: \(error.localizedDescription)")
+                } else if let photo = photo {
+                    let photoModel = PhotoModel(photo: photo)
+                    strongSelf.presenter.didFinishLoadImage(with: .success(photoModel))
+                }
+            }
+        }
     }
     
 }

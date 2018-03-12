@@ -9,5 +9,6 @@ target 'WeatherApp' do
 
   pod 'SDWebImage', '~> 4.0'
   pod 'Alamofire', '~> 4.7'
+  pod 'GooglePlaces'
 
 end

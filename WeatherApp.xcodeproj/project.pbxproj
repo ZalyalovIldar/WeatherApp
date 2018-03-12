@@ -33,6 +33,7 @@
 		CB6757DF2052A5890080ED3B /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6757DD2052A5890080ED3B /* InfoCollectionViewCell.swift */; };
 		CB6757E02052A5890080ED3B /* InfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6757DE2052A5890080ED3B /* InfoCollectionViewCell.xib */; };
 		CB6757E42052CD5E0080ED3B /* WeatherCollectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6757E32052CD5E0080ED3B /* WeatherCollectionInfo.swift */; };
+		CB6757E620530A290080ED3B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6757E520530A290080ED3B /* PhotoModel.swift */; };
 		CB67AFF5205174320024BB75 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFF4205174320024BB75 /* WeatherService.swift */; };
 		CB67AFF7205174590024BB75 /* WeatherServiceImpementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFF6205174590024BB75 /* WeatherServiceImpementation.swift */; };
 		CB67AFFB205174950024BB75 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFFA205174950024BB75 /* Request.swift */; };
@@ -72,6 +73,7 @@
 		CB6757DD2052A5890080ED3B /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB6757DE2052A5890080ED3B /* InfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		CB6757E32052CD5E0080ED3B /* WeatherCollectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionInfo.swift; sourceTree = "<group>"; };
+		CB6757E520530A290080ED3B /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		CB67AFF4205174320024BB75 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		CB67AFF6205174590024BB75 /* WeatherServiceImpementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceImpementation.swift; sourceTree = "<group>"; };
 		CB67AFFA205174950024BB75 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				CB57C8C02050743500B84F39 /* Coordinates.swift */,
 				CB22521A205196C500FF636A /* WeatherInfo.swift */,
 				CB6757E32052CD5E0080ED3B /* WeatherCollectionInfo.swift */,
+				CB6757E520530A290080ED3B /* PhotoModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -432,9 +435,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,6 +472,7 @@
 				CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */,
 				CB22521B205196C500FF636A /* WeatherInfo.swift in Sources */,
 				CB67AFF5205174320024BB75 /* WeatherService.swift in Sources */,
+				CB6757E620530A290080ED3B /* PhotoModel.swift in Sources */,
 				CB67AFFD205175E10024BB75 /* WeatherApiProvider.swift in Sources */,
 				FF6BF4742051C98700FB81A2 /* WeatherInitializer.swift in Sources */,
 				CB57C8A92050636900B84F39 /* WeatherViewController.swift in Sources */,

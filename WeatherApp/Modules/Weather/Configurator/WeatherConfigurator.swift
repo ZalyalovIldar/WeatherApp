@@ -35,6 +35,7 @@ class WeatherConfigurator {
         //only test!
         presenter.setCity("Moscow")
         presenter.setCoordinates(longitude: 49.12214, latidude: 55.78874)
+        presenter.setPlaceID("ChIJmc2sfCutXkERZYyttbl3y38")
         
         return presenter
     }

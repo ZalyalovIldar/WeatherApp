@@ -6,7 +6,7 @@
 //  Copyright © 2018 iOSLab. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol WeatherViewInput: class {
     
