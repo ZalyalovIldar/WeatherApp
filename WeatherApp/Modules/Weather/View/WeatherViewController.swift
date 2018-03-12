@@ -16,6 +16,7 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var infoCollectionView: UICollectionView!
     @IBOutlet weak var infoPageControl: UIPageControl!
+    @IBOutlet weak var cityImageView: UIImageView!
     
     
     var presenter: WeatherViewOutput!
@@ -83,6 +84,10 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     
     func updatePageCount() {
         infoPageControl.numberOfPages = currentWeatherInfoCount ?? 0
+    }
+    
+    func setCityImage(_ image: UIImage) {
+        cityImageView.image = image
     }
 
 }

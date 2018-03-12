@@ -21,5 +21,6 @@ protocol WeatherViewInput: class {
     func setCurrentWeatherInfoCount(_ count: Int)
     func reloadCollectionView()
     func updatePageCount()
+    func setCityImage(_ image: UIImage)
     
 }
