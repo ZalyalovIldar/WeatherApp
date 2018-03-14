@@ -15,6 +15,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
+    var camera: MKMapCamera!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,6 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
     }
@@ -36,7 +36,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
         mapView.showsUserLocation = true
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
         self.navigationItem.leftBarButtonItem = buttonItem
-        
+        self.camera = mapView.camera
     }
     
     // MARK: CLLocationManagerDelegate
@@ -48,10 +48,11 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
-        let camera = mapView.camera
-        camera.centerCoordinate = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
         
-        self.mapView.setCamera(camera, animated: true)
+        if let latitude = location?.coordinate.latitude, let longitude = location?.coordinate.longitude {
+            camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
+            self.mapView.setCamera(camera, animated: true)
+        }
         
         self.locationManager.stopUpdatingLocation()
         
@@ -60,10 +61,12 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
     // MARK: GMSAutocompleteViewControllerDelegate
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+                
+        let latitude = place.coordinate.latitude
+        let longitude = place.coordinate.longitude
         
-        let camera = mapView.camera
-        camera.centerCoordinate = CLLocationCoordinate2DMake(place.coordinate.latitude, place.coordinate.longitude)
-        
+        camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
+    
         self.mapView.setCamera(camera, animated: true)
         self.dismiss(animated: true, completion: nil)
         
@@ -73,7 +76,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
             markerTitle = place.name + " " + address
         }
         
-        let marker = PinView(with: place.coordinate.latitude, and: place.coordinate.longitude, with: markerTitle)
+        let marker = PinView(with: latitude, and: longitude, with: markerTitle)
         
         mapView.addAnnotation(marker)
         
