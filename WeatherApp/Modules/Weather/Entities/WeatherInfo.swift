@@ -44,40 +44,5 @@ struct WeatherInfo: Codable {
     }
 }
 
-extension WeatherInfo {
-    
-    /// Helper method to get info with title for display in cell
-    ///
-    /// - Returns: array with weather info
-    func getCollectionInfo() -> [WeatherCollectionInfo] {
-        var weatherCollectionInfo = [WeatherCollectionInfo]()
-        for infoType in WeatherInfoType.allValues {
-            let info = WeatherCollectionInfo(title: infoType.rawValue, info: getWeatherInfo(for: infoType))
-            weatherCollectionInfo.append(info)
-        }
-        return weatherCollectionInfo
-    }
-    
-    private func getWeatherInfo(for type: WeatherInfoType) -> String {
-        switch type {
-        case .wind: return "Угол \(wind.deg)°"
-        case .pressure: return "\(main.pressure) hPa"
-        case .humidity: return "\(main.humidity)%"
-        case .clouds: return "\(clouds.all)"
-        case .visibility: return "\(visibility) м"
-        }
-    }
-    
-}
 
-/// Weather info types with titles
-enum WeatherInfoType: String {
-    case wind = "Направление ветра"
-    case pressure = "Давление"
-    case humidity = "Влажность"
-    case clouds = "Облачность"
-    case visibility = "Видимость"
-    
-    static let allValues = [wind, pressure, humidity, clouds, visibility]
-}
 

@@ -26,8 +26,6 @@ protocol WeatherInteractorInput: class {
     
     func getWeatherFromCoordinates()
     
-    func getWeatherCollectionInfo() -> [WeatherCollectionInfo]?
-    
     func loadPhotoForPlace()
     
 }
