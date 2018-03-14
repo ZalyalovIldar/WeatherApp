@@ -24,9 +24,14 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let moduleInputHolder = segue.destination as? ModuleInputHolder else { return }
-        guard let moduleInput = moduleInputHolder.moduleInput else { return }
-        presenter.setCollectionContainerModuleInput(moduleInput)
+        
+        switch segueIdentifierCase(for: segue) {
+        case .collectionViewSegue:
+            guard let moduleInputHolder = segue.destination as? ModuleInputHolder else { return }
+            guard let moduleInput = moduleInputHolder.moduleInput else { return }
+            presenter.setCollectionContainerModuleInput(moduleInput)
+            break
+        }
     }
     
     // MARK: - view input
