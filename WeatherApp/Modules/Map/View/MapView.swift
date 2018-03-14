@@ -1,27 +1,25 @@
 //
-//  MapView.swift
+//  DemoView.swift
 //  WeatherApp
 //
-//  Created by Elina on 06/03/2018.
+//  Created by Elina on 14/03/2018.
 //  Copyright © 2018 iOSLab. All rights reserved.
 //
 
-import UIKit
-import GoogleMaps
+import Foundation
+import MapKit
 import GooglePlaces
 
-class MapView: UIViewController, CLLocationManagerDelegate , GMSMapViewDelegate, GMSAutocompleteViewControllerDelegate {
+class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GMSAutocompleteViewControllerDelegate {
     
-    @IBOutlet weak var googleMapsView: GMSMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUPLocationManager()
-        setUpGoogleMap()
-            
+        setUpMap()
     }
     
     func setUPLocationManager() {
@@ -33,15 +31,12 @@ class MapView: UIViewController, CLLocationManagerDelegate , GMSMapViewDelegate,
         locationManager.startMonitoringSignificantLocationChanges()
     }
     
-    func setUpGoogleMap() {
+    func setUpMap() {
         
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        self.googleMapsView.camera = camera
-        self.googleMapsView.delegate = self
-        self.googleMapsView.isMyLocationEnabled = true
-        self.googleMapsView.settings.myLocationButton = true
-        self.googleMapsView.mapType = GMSMapViewType.normal
-
+        mapView.showsUserLocation = true
+        let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        self.navigationItem.leftBarButtonItem = buttonItem
+        
     }
     
     // MARK: CLLocationManagerDelegate
@@ -51,41 +46,36 @@ class MapView: UIViewController, CLLocationManagerDelegate , GMSMapViewDelegate,
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
         let location = locations.last
+        let camera = mapView.camera
+        camera.centerCoordinate = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
         
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        self.mapView.setCamera(camera, animated: true)
         
-        self.googleMapsView.animate(to: camera)
         self.locationManager.stopUpdatingLocation()
         
-    }
-    
-    // MARK: GMSMapViewDelegate
-    
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        self.googleMapsView.isMyLocationEnabled = true
-    }
-    
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        self.googleMapsView.isMyLocationEnabled = true
     }
     
     // MARK: GMSAutocompleteViewControllerDelegate
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
-        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
-        self.googleMapsView.camera = camera
+        let camera = mapView.camera
+        camera.centerCoordinate = CLLocationCoordinate2DMake(place.coordinate.latitude, place.coordinate.longitude)
+        
+        self.mapView.setCamera(camera, animated: true)
         self.dismiss(animated: true, completion: nil)
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        var markerTitle = place.name
         
-        // marker settings
-        marker.title = place.name
-        marker.snippet = place.formattedAddress
-        marker.map = googleMapsView
+        if let address = place.formattedAddress {
+            markerTitle = place.name + " " + address
+        }
+        
+        let marker = PinView(with: place.coordinate.latitude, and: place.coordinate.longitude, with: markerTitle)
+        
+        mapView.addAnnotation(marker)
         
     }
     
@@ -97,9 +87,9 @@ class MapView: UIViewController, CLLocationManagerDelegate , GMSMapViewDelegate,
         self.dismiss(animated: true, completion: nil)
     }
     
-    // -MARK: Buttons actions
+    // -MARK: Button action
     
-    @IBAction func openSearchAddress(_ sender: UIBarButtonItem) {
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
         
@@ -108,5 +98,6 @@ class MapView: UIViewController, CLLocationManagerDelegate , GMSMapViewDelegate,
     }
     
 }
+
 
 
