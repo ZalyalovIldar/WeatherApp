@@ -12,4 +12,12 @@ class MapInteractor: MapInteractorInput  {
     
     weak var presenter: MapInteractorOutput!
     
+    var locationManager: LocationManagerProtocol!
+    
+    // -MARK: MapInteractorInput
+    
+    func getUsersCoordinates(with delegate: LocationDelegate) {
+        locationManager = LocationManager(with: delegate)
+    }
+    
 }

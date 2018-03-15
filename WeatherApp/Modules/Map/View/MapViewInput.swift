@@ -10,4 +10,6 @@ import Foundation
 
 protocol MapViewInput: class {
     
+    func setUserLocation(latitude: Double, longitude: Double)
+    
 }

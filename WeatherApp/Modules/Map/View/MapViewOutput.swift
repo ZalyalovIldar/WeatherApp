@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import MapKit
 
 protocol MapViewOutput: class {
+    
+    func getCoordinates()
     
 }

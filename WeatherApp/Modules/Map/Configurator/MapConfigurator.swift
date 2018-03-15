@@ -10,20 +10,20 @@ import Foundation
 
 class MapConfigurator {
     
-    static func setupModule(with viewController: MapView) {
+    static func setUpModule() -> MapView {
+        
+        let viewController = MapView()
         let presenter = MapPresenter()
         let interactor = MapInteractor()
         let router = MapRouter()
         
-//        viewController.presenter = presenter
-//
-//        presenter.view = viewController
+        presenter.view = viewController
         presenter.interactor = interactor
         presenter.router = router
+        viewController.presenter = presenter
         
-        interactor.presenter = presenter
+        return viewController
         
-//        return presenter
     }
     
 }

@@ -19,4 +19,5 @@ class PinView: NSObject, MKAnnotation {
         self.coordinate = currentCoordinate
         self.title = title
     }
+    
 }

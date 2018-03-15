@@ -8,11 +8,24 @@
 
 import Foundation
 
-class MapPresenter: MapViewOutput, MapInteractorOutput {
+class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate {
     
     weak var view: MapViewInput!
     var router: MapRouterProtocol!
     var interactor: MapInteractorInput!
-
     
+    // -MARK: LocationDelegate
+    
+    func coordinatesResult(with coordinates: Coordinates) {
+        let latitude = coordinates.latitude
+        let longitude = coordinates.longitude
+        view.setUserLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    // -MARK: MapViewOutput
+    
+    func getCoordinates() {
+        interactor.getUsersCoordinates(with: self)
+    }
+
 }

@@ -10,25 +10,30 @@ import Foundation
 import MapKit
 import GooglePlaces
 
-class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, GMSAutocompleteViewControllerDelegate {
+class MapView: UIViewController, MKMapViewDelegate, GMSAutocompleteViewControllerDelegate, MapViewInput {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var locationManager = CLLocationManager()
+    var presenter: MapViewOutput!
+    
     var camera: MKMapCamera!
     
     override func viewDidLoad() {
+        
+        //Move to configurator
+        let presenter = MapPresenter()
+        let interactor = MapInteractor()
+        let router = MapRouter()
+        
+        presenter.view = self
+        presenter.interactor = interactor
+        presenter.router = router
+        self.presenter = presenter
+        //
+        
         super.viewDidLoad()
-        setUPLocationManager()
         setUpMap()
-    }
-    
-    func setUPLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
+        getUserLocation()
     }
     
     func setUpMap() {
@@ -39,26 +44,19 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
         self.camera = mapView.camera
     }
     
-    // MARK: CLLocationManagerDelegate
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error while get location \(error)")
+    func getUserLocation() {
+        presenter.getCoordinates()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let location = locations.last
-        
-        if let latitude = location?.coordinate.latitude, let longitude = location?.coordinate.longitude {
-            camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
-            self.mapView.setCamera(camera, animated: true)
-        }
-        
-        self.locationManager.stopUpdatingLocation()
-        
-    }
+    // -MARK: MapViewInput
     
-    // MARK: GMSAutocompleteViewControllerDelegate
+    func setUserLocation(latitude: Double, longitude: Double) {
+        camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        self.mapView.setCamera(camera, animated: true)
+    }
+ 
+    
+    // -MARK: GMSAutocompleteViewControllerDelegate
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
                 
@@ -96,7 +94,6 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, G
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
         
-        self.locationManager.startUpdatingLocation()
         self.present(autoCompleteController, animated: true, completion: nil)
     }
     

@@ -10,4 +10,6 @@ import Foundation
 
 protocol MapInteractorInput {
     
+    func getUsersCoordinates(with delegate: LocationDelegate)
+    
 }
