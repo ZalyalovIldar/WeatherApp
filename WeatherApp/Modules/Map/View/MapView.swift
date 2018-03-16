@@ -21,19 +21,25 @@ class MapView: UIViewController, MKMapViewDelegate, GMSAutocompleteViewControlle
     override func viewDidLoad() {
         
         //Move to configurator
-        let presenter = MapPresenter()
-        let interactor = MapInteractor()
-        let router = MapRouter()
-        
-        presenter.view = self
-        presenter.interactor = interactor
-        presenter.router = router
-        self.presenter = presenter
+//        let presenter = MapPresenter()
+//        let interactor = MapInteractor()
+//        let router = MapRouter()
+//
+//        presenter.view = self
+//        presenter.interactor = interactor
+//        presenter.router = router
+//        self.presenter = presenter
         //
         
         super.viewDidLoad()
-        setUpMap()
-        getUserLocation()
+        presenter.viewIsReady()
+    }
+    
+    // MARK: - MapViewInput
+    
+    func setUserLocation(latitude: Double, longitude: Double) {
+        camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        self.mapView.setCamera(camera, animated: true)
     }
     
     func setUpMap() {
@@ -48,15 +54,9 @@ class MapView: UIViewController, MKMapViewDelegate, GMSAutocompleteViewControlle
         presenter.getCoordinates()
     }
     
-    // -MARK: MapViewInput
-    
-    func setUserLocation(latitude: Double, longitude: Double) {
-        camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        self.mapView.setCamera(camera, animated: true)
-    }
  
     
-    // -MARK: GMSAutocompleteViewControllerDelegate
+    // MARK: - GMSAutocompleteViewControllerDelegate
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
                 
@@ -66,7 +66,8 @@ class MapView: UIViewController, MKMapViewDelegate, GMSAutocompleteViewControlle
         camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
     
         self.mapView.setCamera(camera, animated: true)
-        self.dismiss(animated: true, completion: nil)
+        
+        presenter.didFinishAutoComplete()
         
         var markerTitle = place.name
         
@@ -85,16 +86,13 @@ class MapView: UIViewController, MKMapViewDelegate, GMSAutocompleteViewControlle
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        self.dismiss(animated: true, completion: nil)
+        presenter.didFinishAutoComplete()
     }
     
-    // -MARK: Button action
+    // MARK: - Button action
     
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
-        let autoCompleteController = GMSAutocompleteViewController()
-        autoCompleteController.delegate = self
-        
-        self.present(autoCompleteController, animated: true, completion: nil)
+        presenter.searchPlaces()
     }
     
 }

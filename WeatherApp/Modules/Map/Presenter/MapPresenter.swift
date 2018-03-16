@@ -14,7 +14,7 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate {
     var router: MapRouterProtocol!
     var interactor: MapInteractorInput!
     
-    // -MARK: LocationDelegate
+    // MARK: - LocationDelegate
     
     func coordinatesResult(with coordinates: Coordinates) {
         let latitude = coordinates.latitude
@@ -22,10 +22,23 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate {
         view.setUserLocation(latitude: latitude, longitude: longitude)
     }
     
-    // -MARK: MapViewOutput
+    // MARK: - MapViewOutput
     
     func getCoordinates() {
-        interactor.getUsersCoordinates(with: self)
+        interactor.getUsersCoordinates()
+    }
+    
+    func viewIsReady() {
+        view.setUpMap()
+        view.getUserLocation()
+    }
+    
+    func searchPlaces() {
+        router.showAutoCompleteController()
+    }
+    
+    func didFinishAutoComplete() {
+        router.closeAutoCompleteController()
     }
 
 }

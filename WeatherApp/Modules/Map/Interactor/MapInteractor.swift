@@ -14,10 +14,10 @@ class MapInteractor: MapInteractorInput  {
     
     var locationManager: LocationManagerProtocol!
     
-    // -MARK: MapInteractorInput
+    // MARK: - MapInteractorInput
     
-    func getUsersCoordinates(with delegate: LocationDelegate) {
-        locationManager = LocationManager(with: delegate)
+    func getUsersCoordinates() {
+        locationManager.getCurrentLocation()
     }
     
 }

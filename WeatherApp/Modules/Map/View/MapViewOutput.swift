@@ -13,4 +13,9 @@ protocol MapViewOutput: class {
     
     func getCoordinates()
     
+    func viewIsReady()
+    
+    func searchPlaces()
+    
+    func didFinishAutoComplete()
 }

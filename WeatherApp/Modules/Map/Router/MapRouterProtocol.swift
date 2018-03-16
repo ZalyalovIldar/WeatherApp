@@ -10,5 +10,8 @@ import Foundation
 
 protocol MapRouterProtocol {
     
+    func showAutoCompleteController()
+    
+    func closeAutoCompleteController()
     
 }

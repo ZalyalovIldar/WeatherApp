@@ -25,9 +25,16 @@ class LocationManager: NSObject, LocationManagerProtocol, CLLocationManagerDeleg
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+    }
+    
+    // MARK: - LocationManagerProtocol
+    
+    func getCurrentLocation() {
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
     }
+    
+    // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error while get location \(error)")
