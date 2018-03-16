@@ -15,7 +15,6 @@
 		C35E9DDF205AFC52000452F2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DDE205AFC52000452F2 /* LocationManager.swift */; };
 		C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */; };
 		C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */; };
-		C37ECE042052F84F0092D02E /* MapViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE032052F84F0092D02E /* MapViewInput.swift */; };
 		C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE052052F8630092D02E /* MapViewOutput.swift */; };
 		C37ECE082052FA120092D02E /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE072052FA120092D02E /* MapPresenter.swift */; };
 		C37ECE0A2052FA280092D02E /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE092052FA280092D02E /* MapInteractor.swift */; };
@@ -29,6 +28,9 @@
 		C37F7803205C455200F613C2 /* MapInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7802205C455200F613C2 /* MapInitializer.swift */; };
 		C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */; };
 		C37F7807205C501A00F613C2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7806205C501A00F613C2 /* Place.swift */; };
+		C37F7808205C7F7700F613C2 /* WeatherViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8AA2050637F00B84F39 /* WeatherViewInput.swift */; };
+		C37F7809205C7FE600F613C2 /* MapViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE032052F84F0092D02E /* MapViewInput.swift */; };
+		C37F780A205C802F00F613C2 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8AF205063DF00B84F39 /* WeatherPresenter.swift */; };
 		C383CC4520599D6F00F3AB5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C383CC4420599D6F00F3AB5F /* MapKit.framework */; };
 		C383CC4B2059CDD600F3AB5F /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383CC4A2059CDD600F3AB5F /* PinView.swift */; };
 		C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383CC4C2059CF1500F3AB5F /* MapView.swift */; };
@@ -39,9 +41,7 @@
 		CB57C89E204FD78D00B84F39 /* CommonAlertsFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C89D204FD78D00B84F39 /* CommonAlertsFactoryProtocol.swift */; };
 		CB57C8A0204FD7F200B84F39 /* CommonAlertsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C89F204FD7F200B84F39 /* CommonAlertsFactory.swift */; };
 		CB57C8A92050636900B84F39 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8A82050636900B84F39 /* WeatherViewController.swift */; };
-		CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8AA2050637F00B84F39 /* WeatherViewInput.swift */; };
 		CB57C8AD2050638E00B84F39 /* WeatherViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8AC2050638E00B84F39 /* WeatherViewOutput.swift */; };
-		CB57C8B0205063DF00B84F39 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8AF205063DF00B84F39 /* WeatherPresenter.swift */; };
 		CB57C8B22050640900B84F39 /* WeatherInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8B12050640900B84F39 /* WeatherInteractorInput.swift */; };
 		CB57C8B42050642600B84F39 /* WeatherInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8B32050642600B84F39 /* WeatherInteractorOutput.swift */; };
 		CB57C8B62050644400B84F39 /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C8B52050644400B84F39 /* WeatherInteractor.swift */; };
@@ -584,6 +584,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37F780A205C802F00F613C2 /* WeatherPresenter.swift in Sources */,
+				C37F7809205C7FE600F613C2 /* MapViewInput.swift in Sources */,
+				C37F7808205C7F7700F613C2 /* WeatherViewInput.swift in Sources */,
 				CB57C8A0204FD7F200B84F39 /* CommonAlertsFactory.swift in Sources */,
 				C37F77FF205C300C00F613C2 /* AutoCompleteManagerProtocol.swift in Sources */,
 				CB57C8B62050644400B84F39 /* WeatherInteractor.swift in Sources */,
@@ -599,7 +602,6 @@
 				C37ECE0E2052FA490092D02E /* MapInteractorOutput.swift in Sources */,
 				CB67B003205184B80024BB75 /* ApiProvider.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
-				C37ECE042052F84F0092D02E /* MapViewInput.swift in Sources */,
 				C37ECE082052FA120092D02E /* MapPresenter.swift in Sources */,
 				C37F7801205C301D00F613C2 /* AutoCompleteManager.swift in Sources */,
 				C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */,
@@ -608,12 +610,8 @@
 				C37ECE122052FA850092D02E /* MapRouter.swift in Sources */,
 				C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */,
 				C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */,
-				CB57C8B0205063DF00B84F39 /* WeatherPresenter.swift in Sources */,
-				CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */,
 				C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */,
 				FF6BF4762051D4D900FB81A2 /* GetLocationWeatherRequest.swift in Sources */,
-				CB57C8B0205063DF00B84F39 /* WeatherPresenter.swift in Sources */,
-				CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */,
 				CB22521B205196C500FF636A /* WeatherInfo.swift in Sources */,
 				CB67AFF5205174320024BB75 /* WeatherService.swift in Sources */,
 				CB6757E620530A290080ED3B /* PhotoModel.swift in Sources */,
