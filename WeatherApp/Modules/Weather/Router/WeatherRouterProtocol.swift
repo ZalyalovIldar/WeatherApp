@@ -10,6 +10,6 @@ import Foundation
 
 protocol WeatherRouterProtocol: class {
     
-    
+    func showErrorAlert(with message: String)
     
 }
