@@ -44,7 +44,17 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
     }
     
     func show(place: Place) {
-        view.setCamera(on: place.place)
+        
+        let latitude = place.latitude
+        let longitude = place.longitude
+        let placeName = place.placeName
+        let placeFormattedAddress = place.placeFormattedAddress
+        
+        view.setCamera(latitude: latitude, longitude: longitude, placeName: placeName, placeFormattedAddress: placeFormattedAddress)
+    }
+    
+    func showAutoCompleteError(with message: String) {
+        router.showError(with: message)
     }
 
 }

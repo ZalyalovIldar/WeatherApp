@@ -14,4 +14,6 @@ protocol AutoCompleteDelegate {
     
     func show(place: Place)
     
+    func showAutoCompleteError(with message: String)
+    
 }

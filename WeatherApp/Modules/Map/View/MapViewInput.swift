@@ -17,6 +17,6 @@ protocol MapViewInput: class {
     
     func getUserLocation()
     
-    func setCamera(on place: GMSPlace)
+    func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?)
     
 }

@@ -15,8 +15,9 @@ class MapConfigurator {
         let presenter = MapPresenter()
         let interactor = MapInteractor()
         let router = MapRouter()
-        let locationManager = LocationManager(with: presenter)
-        let autoCompleteManager = AutoCompleteManager(with: presenter)
+        let locationManager = LocationManager(delegate: presenter)
+        let autoCompleteManager = AutoCompleteManager(delegate: presenter)
+        let alertsFactory = CommonAlertsFactory()
         
         presenter.view = viewController
         presenter.interactor = interactor
@@ -25,6 +26,7 @@ class MapConfigurator {
         interactor.locationManager = locationManager
         router.autoCompleteManager = autoCompleteManager
         router.view = viewController
+        router.alertsFactory = alertsFactory
         
     }
     

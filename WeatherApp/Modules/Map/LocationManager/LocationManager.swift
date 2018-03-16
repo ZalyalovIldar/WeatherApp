@@ -15,9 +15,9 @@ class LocationManager: NSObject, LocationManagerProtocol, CLLocationManagerDeleg
     
     var locationDelegate: LocationDelegate!
     
-    init(with locationDelegate: LocationDelegate) {
+    init(delegate: LocationDelegate) {
         super.init()
-        self.locationDelegate = locationDelegate
+        self.locationDelegate = delegate
         setUPLocationManager()
     }
 

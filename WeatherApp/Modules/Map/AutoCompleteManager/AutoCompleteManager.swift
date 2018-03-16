@@ -15,27 +15,28 @@ class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocomplet
     
     var autoCompleteDelegate: AutoCompleteDelegate!
     
-    init(with autoCompleteDelegate: AutoCompleteDelegate) {
+    init(delegate: AutoCompleteDelegate) {
         super.init()
-        self.autoCompleteDelegate = autoCompleteDelegate
-        setUpAutoCompleteManager()
-    }
-    
-    func setUpAutoCompleteManager() {
+        self.autoCompleteDelegate = delegate
         autoCompleteController.delegate = self
     }
     
     // MARK: - AutoCompleteControllerProtocol
     
     func getAutoCompleteController() -> UIViewController {
-        return autoCompleteController as UIViewController
+        return autoCompleteController
     }
     
     // MARK: - GMSAutoCompleteViewControllerDelegate
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
 
-        let searchedPlace = Place(place: place)
+        let latitude = place.coordinate.latitude
+        let longitude = place.coordinate.longitude
+        let placeName = place.name
+        let placeFormattedAddress = place.formattedAddress
+        
+        let searchedPlace = Place(latitude: latitude, longitude: longitude, placeName: placeName, placeFormattedAddress: placeFormattedAddress)
         
         autoCompleteDelegate.didFinishAutoComplete()
         autoCompleteDelegate.show(place: searchedPlace)
@@ -43,7 +44,7 @@ class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocomplet
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("Error auto complete \(error)")
+        autoCompleteDelegate.showAutoCompleteError(with: "Error auto complete \(error)")
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {

@@ -11,6 +11,9 @@ import GooglePlaces
 
 struct Place {
     
-    let place: GMSPlace!
+    let latitude: Double
+    let longitude: Double
+    let placeName: String
+    let placeFormattedAddress: String?
     
 }

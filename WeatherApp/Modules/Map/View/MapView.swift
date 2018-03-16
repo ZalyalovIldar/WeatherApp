@@ -43,19 +43,16 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         presenter.getCoordinates()
     }
     
-    func setCamera(on place: GMSPlace) {
-        
-        let latitude = place.coordinate.latitude
-        let longitude = place.coordinate.longitude
+    func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?) {
 
         camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
         
         self.mapView.setCamera(camera, animated: true)
         
-        var markerTitle = place.name
+        var markerTitle = placeName
         
-        if let address = place.formattedAddress {
-            markerTitle = place.name + " " + address
+        if let address = placeFormattedAddress {
+            markerTitle = placeName + " " + address
         }
         
         let marker = PinView(with: latitude, and: longitude, with: markerTitle)

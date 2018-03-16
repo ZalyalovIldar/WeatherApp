@@ -15,6 +15,8 @@ class MapRouter: MapRouterProtocol {
     
     var autoCompleteManager: AutoCompleteManagerProtocol!
     
+    var alertsFactory: CommonAlertsFactoryProtocol!
+    
     // MARK: - MapRouterProtocol
     
     func showAutoCompleteController() {
@@ -24,6 +26,10 @@ class MapRouter: MapRouterProtocol {
     
     func closeAutoCompleteController() {
         view.dismiss(animated: true, completion: nil)
+    }
+    
+    func showError(with message: String) {
+        alertsFactory.getErrorAlert(with: message)
     }
 
 }
