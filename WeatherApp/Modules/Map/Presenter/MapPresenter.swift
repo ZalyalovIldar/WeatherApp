@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate {
+class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCompleteDelegate {
     
     weak var view: MapViewInput!
     var router: MapRouterProtocol!
@@ -37,8 +37,14 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate {
         router.showAutoCompleteController()
     }
     
+    // MARK: - AutoCompleteDelegate
+    
     func didFinishAutoComplete() {
         router.closeAutoCompleteController()
+    }
+    
+    func show(place: Place) {
+        view.setCamera(on: place.place)
     }
 
 }

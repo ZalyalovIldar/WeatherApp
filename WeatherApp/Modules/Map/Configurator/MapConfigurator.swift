@@ -16,14 +16,14 @@ class MapConfigurator {
         let interactor = MapInteractor()
         let router = MapRouter()
         let locationManager = LocationManager(with: presenter)
-        let autoCompleteManager = AutoCompleteManager()
+        let autoCompleteManager = AutoCompleteManager(with: presenter)
         
         presenter.view = viewController
         presenter.interactor = interactor
         presenter.router = router
         viewController.presenter = presenter
         interactor.locationManager = locationManager
-        router.autoCompleteController = autoCompleteManager
+        router.autoCompleteManager = autoCompleteManager
         router.view = viewController
         
     }

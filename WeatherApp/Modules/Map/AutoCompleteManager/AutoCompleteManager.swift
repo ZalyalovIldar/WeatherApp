@@ -9,22 +9,45 @@
 import Foundation
 import GooglePlaces
 
-class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol {
+class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocompleteViewControllerDelegate {
     
-    let autoCompleteController = GMSAutocompleteViewController()
+    var autoCompleteController = GMSAutocompleteViewController()
+    
+    var autoCompleteDelegate: AutoCompleteDelegate!
+    
+    init(with autoCompleteDelegate: AutoCompleteDelegate) {
+        super.init()
+        self.autoCompleteDelegate = autoCompleteDelegate
+        setUpAutoCompleteManager()
+    }
+    
+    func setUpAutoCompleteManager() {
+        autoCompleteController.delegate = self
+    }
     
     // MARK: - AutoCompleteControllerProtocol
     
-    func showController(after controller: UIViewController) {
-        
-        self.autoCompleteController.delegate = controller as? GMSAutocompleteViewControllerDelegate
-        controller.present(autoCompleteController, animated: true, completion: nil)
-        
+    func getAutoCompleteController() -> UIViewController {
+        return autoCompleteController as UIViewController
     }
     
-    func closeAutoCompleteController(next controller: UIViewController) {
+    // MARK: - GMSAutoCompleteViewControllerDelegate
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+
+        let searchedPlace = Place(place: place)
         
-        controller.dismiss(animated: true, completion: nil)
-        
+        autoCompleteDelegate.didFinishAutoComplete()
+        autoCompleteDelegate.show(place: searchedPlace)
+
     }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print("Error auto complete \(error)")
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        autoCompleteDelegate.didFinishAutoComplete()
+    }
+    
 }

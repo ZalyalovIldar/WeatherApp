@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import GooglePlaces
 
 protocol MapViewInput: class {
     
     func setUserLocation(latitude: Double, longitude: Double)
+    
     func setUpMap()
+    
     func getUserLocation()
+    
+    func setCamera(on place: GMSPlace)
     
 }

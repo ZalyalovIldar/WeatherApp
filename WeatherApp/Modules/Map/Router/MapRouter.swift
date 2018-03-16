@@ -13,16 +13,17 @@ class MapRouter: MapRouterProtocol {
     
     weak var view: UIViewController!
     
-    var autoCompleteController: AutoCompleteManagerProtocol!
+    var autoCompleteManager: AutoCompleteManagerProtocol!
     
     // MARK: - MapRouterProtocol
     
     func showAutoCompleteController() {
-        autoCompleteController.showController(after: view)
+        let controller = autoCompleteManager.getAutoCompleteController()
+        view.present(controller, animated: true, completion: nil)
     }
     
     func closeAutoCompleteController() {
-        autoCompleteController.closeAutoCompleteController(next: view)
+        view.dismiss(animated: true, completion: nil)
     }
 
 }

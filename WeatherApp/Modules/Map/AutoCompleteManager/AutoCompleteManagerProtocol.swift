@@ -11,8 +11,6 @@ import UIKit
 
 protocol AutoCompleteManagerProtocol {
     
-    func showController(after controller: UIViewController)
-    
-    func closeAutoCompleteController(next controller: UIViewController)
+    func getAutoCompleteController() -> UIViewController
     
 }

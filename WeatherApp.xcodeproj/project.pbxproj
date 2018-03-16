@@ -27,6 +27,8 @@
 		C37F77FF205C300C00F613C2 /* AutoCompleteManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F77FE205C300C00F613C2 /* AutoCompleteManagerProtocol.swift */; };
 		C37F7801205C301D00F613C2 /* AutoCompleteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7800205C301D00F613C2 /* AutoCompleteManager.swift */; };
 		C37F7803205C455200F613C2 /* MapInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7802205C455200F613C2 /* MapInitializer.swift */; };
+		C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */; };
+		C37F7807205C501A00F613C2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7806205C501A00F613C2 /* Place.swift */; };
 		C383CC4520599D6F00F3AB5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C383CC4420599D6F00F3AB5F /* MapKit.framework */; };
 		C383CC4B2059CDD600F3AB5F /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383CC4A2059CDD600F3AB5F /* PinView.swift */; };
 		C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383CC4C2059CF1500F3AB5F /* MapView.swift */; };
@@ -71,6 +73,8 @@
 		C37F77FE205C300C00F613C2 /* AutoCompleteManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteManagerProtocol.swift; sourceTree = "<group>"; };
 		C37F7800205C301D00F613C2 /* AutoCompleteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteManager.swift; sourceTree = "<group>"; };
 		C37F7802205C455200F613C2 /* MapInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInitializer.swift; sourceTree = "<group>"; };
+		C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteDelegate.swift; sourceTree = "<group>"; };
+		C37F7806205C501A00F613C2 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C383CC4420599D6F00F3AB5F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C383CC4A2059CDD600F3AB5F /* PinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
 		C383CC4C2059CF1500F3AB5F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		C37ECDF92052F78C0092D02E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C37F7806205C501A00F613C2 /* Place.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				C37F77FE205C300C00F613C2 /* AutoCompleteManagerProtocol.swift */,
 				C37F7800205C301D00F613C2 /* AutoCompleteManager.swift */,
+				C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */,
 			);
 			path = AutoCompleteManager;
 			sourceTree = "<group>";
@@ -502,11 +508,13 @@
 				C37F7801205C301D00F613C2 /* AutoCompleteManager.swift in Sources */,
 				C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */,
 				CB57C8BE2050659500B84F39 /* WeatherModuleInput.swift in Sources */,
+				C37F7807205C501A00F613C2 /* Place.swift in Sources */,
 				C37ECE122052FA850092D02E /* MapRouter.swift in Sources */,
 				C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */,
 				C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */,
 				CB57C8B0205063DF00B84F39 /* WeatherPresenter.swift in Sources */,
 				CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */,
+				C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */,
 				CB57C8A92050636900B84F39 /* WeatherViewController.swift in Sources */,
 				CB57C89E204FD78D00B84F39 /* CommonAlertsFactoryProtocol.swift in Sources */,
 				C37ECE142052FA940092D02E /* MapRouterProtocol.swift in Sources */,
