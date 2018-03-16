@@ -29,7 +29,9 @@ class MapRouter: MapRouterProtocol {
     }
     
     func showError(with message: String) {
-        alertsFactory.getErrorAlert(with: message)
+        let alertController = alertsFactory.getErrorAlert(with: message)
+        let currentController = autoCompleteManager.getAutoCompleteController()
+        currentController.present(alertController, animated: true, completion: nil)
     }
 
 }

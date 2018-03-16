@@ -15,6 +15,8 @@ class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocomplet
     
     var autoCompleteDelegate: AutoCompleteDelegate!
     
+    let autoCompleteErrorMessage = "Ошибка при выполнении поиска!"
+    
     init(delegate: AutoCompleteDelegate) {
         super.init()
         self.autoCompleteDelegate = delegate
@@ -44,7 +46,7 @@ class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocomplet
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        autoCompleteDelegate.showAutoCompleteError(with: "Error auto complete \(error)")
+        autoCompleteDelegate.showAutoCompleteError(with: autoCompleteErrorMessage)
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
