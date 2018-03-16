@@ -12,6 +12,26 @@
 		7C7CC954204D91C2006EBF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC952204D91C2006EBF80 /* Main.storyboard */; };
 		7C7CC956204D91C2006EBF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC955204D91C2006EBF80 /* Assets.xcassets */; };
 		7C7CC959204D91C2006EBF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC957204D91C2006EBF80 /* LaunchScreen.storyboard */; };
+		C35E9DDF205AFC52000452F2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DDE205AFC52000452F2 /* LocationManager.swift */; };
+		C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */; };
+		C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */; };
+		C37ECE042052F84F0092D02E /* MapViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE032052F84F0092D02E /* MapViewInput.swift */; };
+		C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE052052F8630092D02E /* MapViewOutput.swift */; };
+		C37ECE082052FA120092D02E /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE072052FA120092D02E /* MapPresenter.swift */; };
+		C37ECE0A2052FA280092D02E /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE092052FA280092D02E /* MapInteractor.swift */; };
+		C37ECE0C2052FA380092D02E /* MapInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE0B2052FA380092D02E /* MapInteractorInput.swift */; };
+		C37ECE0E2052FA490092D02E /* MapInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE0D2052FA490092D02E /* MapInteractorOutput.swift */; };
+		C37ECE102052FA5D0092D02E /* MapConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE0F2052FA5D0092D02E /* MapConfigurator.swift */; };
+		C37ECE122052FA850092D02E /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE112052FA850092D02E /* MapRouter.swift */; };
+		C37ECE142052FA940092D02E /* MapRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE132052FA940092D02E /* MapRouterProtocol.swift */; };
+		C37F77FF205C300C00F613C2 /* AutoCompleteManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F77FE205C300C00F613C2 /* AutoCompleteManagerProtocol.swift */; };
+		C37F7801205C301D00F613C2 /* AutoCompleteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7800205C301D00F613C2 /* AutoCompleteManager.swift */; };
+		C37F7803205C455200F613C2 /* MapInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7802205C455200F613C2 /* MapInitializer.swift */; };
+		C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */; };
+		C37F7807205C501A00F613C2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F7806205C501A00F613C2 /* Place.swift */; };
+		C383CC4520599D6F00F3AB5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C383CC4420599D6F00F3AB5F /* MapKit.framework */; };
+		C383CC4B2059CDD600F3AB5F /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383CC4A2059CDD600F3AB5F /* PinView.swift */; };
+		C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383CC4C2059CF1500F3AB5F /* MapView.swift */; };
 		CB22521B205196C500FF636A /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22521A205196C500FF636A /* WeatherInfo.swift */; };
 		CB3060992051A7EA00F508C6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3060982051A7EA00F508C6 /* Response.swift */; };
 		CB57C899204FD54800B84F39 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57C898204FD54800B84F39 /* ReusableView.swift */; };
@@ -52,6 +72,26 @@
 		7C7CC955204D91C2006EBF80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7CC958204D91C2006EBF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C7CC95A204D91C2006EBF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C35E9DDE205AFC52000452F2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerProtocol.swift; sourceTree = "<group>"; };
+		C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
+		C37ECE032052F84F0092D02E /* MapViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInput.swift; sourceTree = "<group>"; };
+		C37ECE052052F8630092D02E /* MapViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewOutput.swift; sourceTree = "<group>"; };
+		C37ECE072052FA120092D02E /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		C37ECE092052FA280092D02E /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		C37ECE0B2052FA380092D02E /* MapInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractorInput.swift; sourceTree = "<group>"; };
+		C37ECE0D2052FA490092D02E /* MapInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractorOutput.swift; sourceTree = "<group>"; };
+		C37ECE0F2052FA5D0092D02E /* MapConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfigurator.swift; sourceTree = "<group>"; };
+		C37ECE112052FA850092D02E /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		C37ECE132052FA940092D02E /* MapRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouterProtocol.swift; sourceTree = "<group>"; };
+		C37F77FE205C300C00F613C2 /* AutoCompleteManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteManagerProtocol.swift; sourceTree = "<group>"; };
+		C37F7800205C301D00F613C2 /* AutoCompleteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteManager.swift; sourceTree = "<group>"; };
+		C37F7802205C455200F613C2 /* MapInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInitializer.swift; sourceTree = "<group>"; };
+		C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteDelegate.swift; sourceTree = "<group>"; };
+		C37F7806205C501A00F613C2 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		C383CC4420599D6F00F3AB5F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C383CC4A2059CDD600F3AB5F /* PinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
+		C383CC4C2059CF1500F3AB5F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CB22521A205196C500FF636A /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		CB3060982051A7EA00F508C6 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		CB57C898204FD54800B84F39 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -91,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C383CC4520599D6F00F3AB5F /* MapKit.framework in Frameworks */,
 				689BE8B980C1F269FF91BAC0 /* Pods_WeatherApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +142,7 @@
 		328F1D8F3D95C2EE94FD958C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C383CC4420599D6F00F3AB5F /* MapKit.framework */,
 				CDA28FD8F7F725276FFA31DD /* Pods_WeatherApp.framework */,
 			);
 			name = Frameworks;
@@ -144,6 +186,81 @@
 			path = WeatherApp;
 			sourceTree = "<group>";
 		};
+		C35E9DDD205AFC1A000452F2 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				C35E9DDE205AFC52000452F2 /* LocationManager.swift */,
+				C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */,
+				C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		C37ECDF92052F78C0092D02E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C37F7806205C501A00F613C2 /* Place.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C37ECDFA2052F79C0092D02E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C37ECE112052FA850092D02E /* MapRouter.swift */,
+				C37ECE132052FA940092D02E /* MapRouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C37ECDFB2052F7A70092D02E /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				C37ECE0F2052FA5D0092D02E /* MapConfigurator.swift */,
+				C37F7802205C455200F613C2 /* MapInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		C37ECDFC2052F7B10092D02E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C37ECE092052FA280092D02E /* MapInteractor.swift */,
+				C37ECE0B2052FA380092D02E /* MapInteractorInput.swift */,
+				C37ECE0D2052FA490092D02E /* MapInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C37ECDFD2052F7BA0092D02E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C37ECE072052FA120092D02E /* MapPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C37ECDFE2052F7C70092D02E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C37ECE032052F84F0092D02E /* MapViewInput.swift */,
+				C37ECE052052F8630092D02E /* MapViewOutput.swift */,
+				C383CC4A2059CDD600F3AB5F /* PinView.swift */,
+				C383CC4C2059CF1500F3AB5F /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C37F77FD205C2FA500F613C2 /* AutoCompleteManager */ = {
+			isa = PBXGroup;
+			children = (
+				C37F77FE205C300C00F613C2 /* AutoCompleteManagerProtocol.swift */,
+				C37F7800205C301D00F613C2 /* AutoCompleteManager.swift */,
+				C37F7804205C4D6E00F613C2 /* AutoCompleteDelegate.swift */,
+			);
+			path = AutoCompleteManager;
+			sourceTree = "<group>";
+		};
 		CB57C893204FD45500B84F39 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +285,14 @@
 		CB57C895204FD4DC00B84F39 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				C37F77FD205C2FA500F613C2 /* AutoCompleteManager */,
+				C35E9DDD205AFC1A000452F2 /* LocationManager */,
+				C37ECDFE2052F7C70092D02E /* View */,
+				C37ECDFD2052F7BA0092D02E /* Presenter */,
+				C37ECDFC2052F7B10092D02E /* Interactor */,
+				C37ECDFB2052F7A70092D02E /* Configurator */,
+				C37ECDFA2052F79C0092D02E /* Router */,
+				C37ECDF92052F78C0092D02E /* Entities */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -355,6 +480,11 @@
 					7C7CC94A204D91C2006EBF80 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -455,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB57C8A0204FD7F200B84F39 /* CommonAlertsFactory.swift in Sources */,
+				C37F77FF205C300C00F613C2 /* AutoCompleteManagerProtocol.swift in Sources */,
 				CB57C8B62050644400B84F39 /* WeatherInteractor.swift in Sources */,
 				CB6757DF2052A5890080ED3B /* InfoCollectionViewCell.swift in Sources */,
 				CB57C89B204FD58300B84F39 /* Storyboards.swift in Sources */,
@@ -464,9 +595,22 @@
 				CB3060992051A7EA00F508C6 /* Response.swift in Sources */,
 				CB57C8AD2050638E00B84F39 /* WeatherViewOutput.swift in Sources */,
 				CB57C8B42050642600B84F39 /* WeatherInteractorOutput.swift in Sources */,
+				C35E9DDF205AFC52000452F2 /* LocationManager.swift in Sources */,
+				C37ECE0E2052FA490092D02E /* MapInteractorOutput.swift in Sources */,
 				CB67B003205184B80024BB75 /* ApiProvider.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
+				C37ECE042052F84F0092D02E /* MapViewInput.swift in Sources */,
+				C37ECE082052FA120092D02E /* MapPresenter.swift in Sources */,
+				C37F7801205C301D00F613C2 /* AutoCompleteManager.swift in Sources */,
+				C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */,
 				CB57C8BE2050659500B84F39 /* WeatherModuleInput.swift in Sources */,
+				C37F7807205C501A00F613C2 /* Place.swift in Sources */,
+				C37ECE122052FA850092D02E /* MapRouter.swift in Sources */,
+				C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */,
+				C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */,
+				CB57C8B0205063DF00B84F39 /* WeatherPresenter.swift in Sources */,
+				CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */,
+				C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */,
 				FF6BF4762051D4D900FB81A2 /* GetLocationWeatherRequest.swift in Sources */,
 				CB57C8B0205063DF00B84F39 /* WeatherPresenter.swift in Sources */,
 				CB57C8AB2050637F00B84F39 /* WeatherViewInput.swift in Sources */,
@@ -478,11 +622,18 @@
 				CB57C8A92050636900B84F39 /* WeatherViewController.swift in Sources */,
 				CB6757E42052CD5E0080ED3B /* WeatherCollectionInfo.swift in Sources */,
 				CB57C89E204FD78D00B84F39 /* CommonAlertsFactoryProtocol.swift in Sources */,
+				C37ECE142052FA940092D02E /* MapRouterProtocol.swift in Sources */,
 				CB57C8BA2050648900B84F39 /* WeatherRouterProtocol.swift in Sources */,
+				C37ECE0A2052FA280092D02E /* MapInteractor.swift in Sources */,
+				C37F7803205C455200F613C2 /* MapInitializer.swift in Sources */,
 				CB57C899204FD54800B84F39 /* ReusableView.swift in Sources */,
+				C37ECE102052FA5D0092D02E /* MapConfigurator.swift in Sources */,
 				CB57C8C12050743500B84F39 /* Coordinates.swift in Sources */,
+				C383CC4B2059CDD600F3AB5F /* PinView.swift in Sources */,
 				CB67AFFB205174950024BB75 /* Request.swift in Sources */,
 				CB57C8B82050646300B84F39 /* WeatherConfigurator.swift in Sources */,
+				C37ECE0C2052FA380092D02E /* MapInteractorInput.swift in Sources */,
+				C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */,
 				CB57C8BC205064EB00B84F39 /* WeatherRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,10 +773,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W56K4E4L5F;
+				DEVELOPMENT_TEAM = W2LXQKGF2K;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/Commons/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOSLab.WeatherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = WeatherApp45677;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -638,10 +789,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W56K4E4L5F;
+				DEVELOPMENT_TEAM = W2LXQKGF2K;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/Commons/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOSLab.WeatherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = WeatherApp45677;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

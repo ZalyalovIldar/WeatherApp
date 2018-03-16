@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ya7-dM-naR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kv2-OL-GnU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -159,6 +159,59 @@
             </objects>
             <point key="canvasLocation" x="434" y="32"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="PyE-BL-CDV">
+            <objects>
+                <viewController storyboardIdentifier="mapScreen" id="JUq-CT-AnG" customClass="MapView" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wQC-mL-a3z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-o1-OPv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hiU-X0-ZVY">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hiU-X0-ZVY" firstAttribute="top" secondItem="z5u-o1-OPv" secondAttribute="top" id="9Hp-eu-CFp"/>
+                                    <constraint firstAttribute="bottom" secondItem="hiU-X0-ZVY" secondAttribute="bottom" id="DgH-Iq-FGO"/>
+                                    <constraint firstItem="hiU-X0-ZVY" firstAttribute="leading" secondItem="z5u-o1-OPv" secondAttribute="leading" id="InF-XH-D10"/>
+                                    <constraint firstAttribute="trailing" secondItem="hiU-X0-ZVY" secondAttribute="trailing" id="ldK-lg-E0v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z5u-o1-OPv" firstAttribute="leading" secondItem="Xhd-n9-RrD" secondAttribute="leading" id="IgA-XQ-b6g"/>
+                            <constraint firstItem="Xhd-n9-RrD" firstAttribute="trailing" secondItem="z5u-o1-OPv" secondAttribute="trailing" id="Kv4-OQ-Agc"/>
+                            <constraint firstItem="Xhd-n9-RrD" firstAttribute="bottom" secondItem="z5u-o1-OPv" secondAttribute="bottom" id="dHr-aj-SaS"/>
+                            <constraint firstItem="z5u-o1-OPv" firstAttribute="top" secondItem="Xhd-n9-RrD" secondAttribute="top" id="edB-6w-QuS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xhd-n9-RrD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Поиск" id="jYT-z6-ab1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="KzD-3R-y9M">
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="JUq-CT-AnG" id="3YH-MJ-AtZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="hiU-X0-ZVY" id="fIq-ET-asa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOF-go-iXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="qxe-VT-4AD" customClass="MapInitializer" customModule="WeatherApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="JUq-CT-AnG" id="3BO-Fa-JdJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="425" y="770"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="NsI-2V-bbw">
             <objects>
@@ -176,6 +229,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydf-tc-9pG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-436" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KgA-es-yId">
+            <objects>
+                <navigationController storyboardIdentifier="mapScreenNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Kv2-OL-GnU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T5P-ce-AKC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JUq-CT-AnG" kind="relationship" relationship="rootViewController" id="16F-aB-H7x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lJ-83-ZUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-386" y="770"/>
         </scene>
     </scenes>
 </document>
