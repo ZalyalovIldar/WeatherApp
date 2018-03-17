@@ -11,5 +11,7 @@ import Foundation
 protocol WeatherRouterProtocol: class {
     
     func showErrorAlert(with message: String)
+    func sendDataToCollectionCointainerView(_ data: Any?)
+    func setCollectionContainerModuleInput(_ moduleInput: ModuleInput)
     
 }

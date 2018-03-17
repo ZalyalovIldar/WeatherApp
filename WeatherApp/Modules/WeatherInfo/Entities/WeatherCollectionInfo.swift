@@ -12,6 +12,6 @@ import Foundation
 struct WeatherCollectionInfo {
     
     let title: String
-    let info: String
+    let text: String
     
 }
