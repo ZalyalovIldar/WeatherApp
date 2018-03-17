@@ -59,7 +59,7 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
         view.setSunsetTime(sunsetTime)
         view.setCityTitle(weatherInfo.name)
         
-        router.sendDataToCollectionCointainerView(weatherInfo)
+        router.sendWeatherInfoToCollectionContainer(weatherInfo)
     }
     
     func getWeatherFailure(with message: String) {

@@ -13,7 +13,8 @@ class WeatherInitializer: NSObject {
     @IBOutlet weak var viewController: WeatherViewController!
     
     override func awakeFromNib() {
-        let _ = WeatherConfigurator.setupModule(with: viewController)
+        let configurator = WeatherConfigurator()
+        configurator.setupModule(with: viewController)
     }
     
 }

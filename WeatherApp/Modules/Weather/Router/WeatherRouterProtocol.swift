@@ -18,7 +18,7 @@ protocol WeatherRouterProtocol: class {
     /// Send new data to inner collection view
     ///
     /// - Parameter data: any data
-    func sendDataToCollectionCointainerView(_ data: Any?)
+    func sendWeatherInfoToCollectionContainer(_ weatherInfo: WeatherInfo)
     
     /// Setup link to collection view
     ///

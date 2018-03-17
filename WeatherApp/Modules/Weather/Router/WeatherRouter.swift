@@ -25,8 +25,8 @@ class WeatherRouter: WeatherRouterProtocol {
         collectionContainerModuleInput = moduleInput
     }
     
-    func sendDataToCollectionCointainerView(_ data: Any?) {
-        collectionContainerModuleInput?.setData(data)
+    func sendWeatherInfoToCollectionContainer(_ weatherInfo: WeatherInfo) {
+        collectionContainerModuleInput?.setData(weatherInfo)
     }
     
 }

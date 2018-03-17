@@ -212,6 +212,7 @@
 		7C7CC94D204D91C2006EBF80 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CB67AFF3205173CD0024BB75 /* Services */,
 				CB67AFF82051747D0024BB75 /* API */,
 				CB57C897204FD4FB00B84F39 /* Helpers */,
 				CB57C894204FD4D500B84F39 /* Modules */,
@@ -396,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				CB652B872059259500019484 /* Helpers */,
-				CB67AFF3205173CD0024BB75 /* Services */,
 				CB57C8BF2050742300B84F39 /* Entities */,
 				CB57C8A52050625A00B84F39 /* Router */,
 				CB57C8A42050624D00B84F39 /* Configurator */,
