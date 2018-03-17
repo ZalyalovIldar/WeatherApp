@@ -28,10 +28,6 @@ class MapServiceImplementation: MapService {
                 return
             }
             
-            //Получили ли?
-            let url = JSONDecoder().userInfo.removeValue(forKey: CodingUserInfoKey(rawValue: strongSelf.coatOfArmsUrlKey)!)
-            
-            
             completionBlock(.success(mapInfo))
         }
     }

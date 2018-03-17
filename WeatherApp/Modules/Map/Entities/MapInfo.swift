@@ -11,16 +11,31 @@ import UIKit
 
 struct MapInfo: Codable {
     
-    var coatOfArms: String
+    let value: [Value]
+    
+    struct Value: Codable {
+        let contentUrl: String
+    }
     
 }
 
 extension MapInfo {
     
-//    private func getWeatherInfo() -> UIImage? {
-//
-//        return image
-//    }
-    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: TopCodingKeys.self)
+        var meta = try container.nestedUnkeyedContainer(forKey: .value)
+        var values : [Value] = []
+        while !meta.isAtEnd {
+            let value = try meta.decode(Value.self)
+            values.append(value)
+        }
+        
+        self.init(value: values)
+        
+    }
+}
+
+enum TopCodingKeys: String, CodingKey {
+    case value
 }
 
