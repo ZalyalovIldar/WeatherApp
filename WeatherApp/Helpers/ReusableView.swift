@@ -20,7 +20,7 @@ extension ReusableView {
     }
 }
 
-extension UIViewController: ReusableView{
+extension UIViewController: ReusableView {
 }
 
 extension UIStoryboard {

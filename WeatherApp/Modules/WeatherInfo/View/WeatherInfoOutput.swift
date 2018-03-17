@@ -10,8 +10,15 @@ import Foundation
 
 protocol WeatherInfoOutput: class {
     
+    /// View lifecycle
     func viewIsReady()
+    
+    /// Update current weather info for collection view
+    ///
+    /// - Parameter indexPath: index of cell to update
     func updateCurrentWeatherInfo(at indexPath: IndexPath)
+    
+    /// Update current count of cells
     func updateCurrentWeatherInfoCount()
     
 }

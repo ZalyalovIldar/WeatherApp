@@ -10,7 +10,14 @@ import Foundation
 
 protocol WeatherInfoInteractorOutput: class {
     
+    /// Result updating of current weather info in cell
+    ///
+    /// - Parameter weatherInfo: weather info for cell
     func didFinishUpdateCurrentWeatherInfo(_ weatherInfo: WeatherCollectionInfo)
+    
+    /// Result updating of current count of cells
+    ///
+    /// - Parameter count: count of cells
     func dudFinishUpdateCurrentWeatherInfoCount(_ count: Int)
     
 }

@@ -22,6 +22,9 @@ protocol WeatherModuleInput: class {
     ///   - latidude: latitude coordinate
     func setCoordinates(longitude: Double, latidude: Double)
     
+    /// Place ID for load image
+    ///
+    /// - Parameter placeID: unique place ID
     func setPlaceID(_ placeID: String)
     
 }

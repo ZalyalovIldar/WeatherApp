@@ -10,6 +10,10 @@ import UIKit
 
 protocol CommonAlertsFactoryProtocol: class {
     
+    /// Get UIAlertController with error title
+    ///
+    /// - Parameter message: error message to show
+    /// - Returns: prepared alert
     func getErrorAlert(with message: String) -> UIViewController
     
 }

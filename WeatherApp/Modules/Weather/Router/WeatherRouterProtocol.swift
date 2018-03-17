@@ -10,8 +10,19 @@ import Foundation
 
 protocol WeatherRouterProtocol: class {
     
+    /// Show UIAlertController with error title
+    ///
+    /// - Parameter message: error message to show
     func showErrorAlert(with message: String)
+    
+    /// Send new data to inner collection view
+    ///
+    /// - Parameter data: any data
     func sendDataToCollectionCointainerView(_ data: Any?)
+    
+    /// Setup link to collection view
+    ///
+    /// - Parameter moduleInput: collection view presenter
     func setCollectionContainerModuleInput(_ moduleInput: ModuleInput)
     
 }

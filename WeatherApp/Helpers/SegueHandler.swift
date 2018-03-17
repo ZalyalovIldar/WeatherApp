@@ -8,9 +8,15 @@
 
 import UIKit
 
+/// Helper to provide segues more safety
 protocol SegueHandler {
     
     associatedtype viewControllerSegue: RawRepresentable
+    
+    /// Get segue identifier
+    ///
+    /// - Parameter segue: segue to destionation view controller
+    /// - Returns: segue identifier as enum
     func segueIdentifierCase(for segue: UIStoryboardSegue) -> viewControllerSegue
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol WeatherViewInput: class {
     
+    // Setters
     func setState(_ state: String)
     func setTemperature(_ temperature: String)
     func setSunriseTime(_ time: String)

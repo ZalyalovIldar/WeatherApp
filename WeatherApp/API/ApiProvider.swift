@@ -10,8 +10,14 @@ import Foundation
 
 protocol ApiProvider {
     
+    /// Base URL of API
     var baseURL: URL? { get }
     
+    /// Send request to API
+    ///
+    /// - Parameters:
+    ///   - request: prepared request with parameters
+    ///   - completionBlock: result block with data
     func makeRequest(with request: Request, completionBlock: @escaping (Data?) -> Void)
     
 }

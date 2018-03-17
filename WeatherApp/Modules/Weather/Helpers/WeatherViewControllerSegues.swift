@@ -10,6 +10,9 @@ import Foundation
 
 extension WeatherViewController {
     
+    /// Enum with segues of WeatherViewController
+    ///
+    /// - collectionViewSegue: segue to inner colletion view
     enum viewControllerSegue: String {
         case collectionViewSegue
     }
