@@ -24,13 +24,15 @@ class LocationManager: NSObject, LocationManagerProtocol, CLLocationManagerDeleg
     func setUPLocationManager() {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     // MARK: - LocationManagerProtocol
     
     func getCurrentLocation() {
-        locationManager.startUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
     }
     
     // MARK: - CLLocationManagerDelegate
