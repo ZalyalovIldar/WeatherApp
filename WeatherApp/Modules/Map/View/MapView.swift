@@ -37,6 +37,9 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
         self.navigationItem.leftBarButtonItem = buttonItem
         self.camera = mapView.camera
+        
+        //
+        mapView.delegate = self
     }
     
     func getUserLocation() {
@@ -65,6 +68,14 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
         presenter.searchPlaces()
     }
+    
+    // MARK: - MKMapViewDelegate
+    
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        let view = MKPinAnnotationView()
+//        view.pinTintColor = UIColor.blue
+//        return view
+//    }
     
 }
 
