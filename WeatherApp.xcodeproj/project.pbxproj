@@ -14,6 +14,8 @@
 		7C7CC959204D91C2006EBF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC957204D91C2006EBF80 /* LaunchScreen.storyboard */; };
 		FFD95193205DC525006724C2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95192205DC525006724C2 /* MapViewController.swift */; };
 		FFD95195205DC537006724C2 /* WheatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95194205DC537006724C2 /* WheatherViewController.swift */; };
+		FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */; };
+		FFD95199205DC5DA006724C2 /* MapAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95198205DC5D9006724C2 /* MapAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		87D158EB75326F12D97767F2 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FFD95192205DC525006724C2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FFD95194205DC537006724C2 /* WheatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewController.swift; sourceTree = "<group>"; };
+		FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherAPIManager.swift; sourceTree = "<group>"; };
+		FFD95198205DC5D9006724C2 /* MapAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		FFD9518C205DC4F4006724C2 /* MapAPI */ = {
 			isa = PBXGroup;
 			children = (
+				FFD95198205DC5D9006724C2 /* MapAPIManager.swift */,
 			);
 			path = MapAPI;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		FFD9518D205DC4F9006724C2 /* WeatherAPI */ = {
 			isa = PBXGroup;
 			children = (
+				FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */,
 			);
 			path = WeatherAPI;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */,
+				FFD95199205DC5DA006724C2 /* MapAPIManager.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
 				FFD95193205DC525006724C2 /* MapViewController.swift in Sources */,
 				FFD95195205DC537006724C2 /* WheatherViewController.swift in Sources */,
