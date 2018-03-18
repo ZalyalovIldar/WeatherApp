@@ -116,10 +116,8 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         leftAccessory.font = UIFont(name: pin.title!, size: fontSize)
         annotationView?.leftCalloutAccessoryView = leftAccessory
         
-        let image = UIImage(named: "Image")
-        let button = UIButton(type: .custom)
+        let button = UIButton(type: .infoDark)
         button.frame = CGRect(x: zero, y: zero, width: buttonFrameSize, height: buttonFrameSize)
-        button.setImage(image, for: UIControlState())
         
         annotationView?.rightCalloutAccessoryView = button
         
