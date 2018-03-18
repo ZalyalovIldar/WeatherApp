@@ -13,6 +13,7 @@ class PinView: NSObject, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D
     var title: String?
+    var image: UIImage?
     
     init(with latitude: CLLocationDegrees, and longitude: CLLocationDegrees, with title: String? ) {
         let currentCoordinate = CLLocationCoordinate2DMake(latitude, longitude)

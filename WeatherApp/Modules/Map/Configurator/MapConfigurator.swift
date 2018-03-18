@@ -18,12 +18,21 @@ class MapConfigurator {
         let locationManager = LocationManager(delegate: presenter)
         let autoCompleteManager = AutoCompleteManager(delegate: presenter)
         let alertsFactory = CommonAlertsFactory()
+        let mapApiProvider = MapApiProvider()
+        let mapService = MapServiceImplementation(with: mapApiProvider)
+        let imageManager = ImageManager(delegate: presenter)
         
         presenter.view = viewController
         presenter.interactor = interactor
         presenter.router = router
+        
         viewController.presenter = presenter
+        
         interactor.locationManager = locationManager
+        interactor.mapService = mapService
+        interactor.presenter = presenter
+        interactor.imageManager = imageManager
+        
         router.autoCompleteManager = autoCompleteManager
         router.view = viewController
         router.alertsFactory = alertsFactory

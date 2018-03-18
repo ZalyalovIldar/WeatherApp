@@ -40,8 +40,9 @@ class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocomplet
         
         let searchedPlace = Place(latitude: latitude, longitude: longitude, placeName: placeName, placeFormattedAddress: placeFormattedAddress)
         
+        autoCompleteDelegate.cityIsDefined(name: searchedPlace.placeName, place: searchedPlace)
         autoCompleteDelegate.didFinishAutoComplete()
-        autoCompleteDelegate.show(place: searchedPlace)
+//        autoCompleteDelegate.show(place: searchedPlace)
 
     }
     

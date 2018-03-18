@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCompleteDelegate {
+class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCompleteDelegate, ImageManagerDelegate {
     
     weak var view: MapViewInput!
     var router: MapRouterProtocol!
@@ -43,18 +43,34 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
         router.closeAutoCompleteController()
     }
     
-    func show(place: Place) {
-        
+    func showAutoCompleteError(with message: String) {
+        router.showAutoCompleteErrorAlert(with: message)
+    }
+    
+    func cityIsDefined(name: String, place: Place) {
+        interactor.getCoatOfArms(of: name, place: place)
+    }
+    
+    // MARK: - MapInteractorOutput
+    
+    func getCoatOfArmsResult(with response: Response<MapInfo>, place: Place) {
+        switch response {
+        case .success(let mapInfo):
+            guard let contentURL = mapInfo.value.first?.contentUrl else { return }
+            interactor.getCoatOfArmsImage(from: contentURL, place: place)
+        case .error(let errorMessage):
+            router.showErrorAlert(with: errorMessage)
+        }
+    }
+    
+    // MARK: - ImageManagerDelegate
+    
+    func getCoatOfArms(image: PhotoModel, place: Place) {
         let latitude = place.latitude
         let longitude = place.longitude
         let placeName = place.placeName
-        let placeFormattedAddress = place.placeFormattedAddress
         
-        view.setCamera(latitude: latitude, longitude: longitude, placeName: placeName, placeFormattedAddress: placeFormattedAddress)
+        view.setCamera(latitude: latitude, longitude: longitude, placeName: placeName, image: image.photo)
     }
     
-    func showAutoCompleteError(with message: String) {
-        router.showError(with: message)
-    }
-
 }

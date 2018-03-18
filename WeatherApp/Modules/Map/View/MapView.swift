@@ -18,6 +18,11 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     
     var camera: MKMapCamera!
     
+    let zero: CGFloat = 0
+    let constraintConst: CGFloat = 120
+    let buttonFrameSize: CGFloat = 30
+    let fontSize: CGFloat = 10
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -37,25 +42,23 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
         self.navigationItem.leftBarButtonItem = buttonItem
         self.camera = mapView.camera
+        
+        //
+        mapView.delegate = self
     }
     
     func getUserLocation() {
         presenter.getCoordinates()
     }
     
-    func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?) {
+    func setCamera(latitude: Double, longitude: Double, placeName: String, image: UIImage) {
 
         camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
         
         self.mapView.setCamera(camera, animated: true)
         
-        var markerTitle = placeName
-        
-        if let address = placeFormattedAddress {
-            markerTitle = placeName + " " + address
-        }
-        
-        let marker = PinView(with: latitude, and: longitude, with: markerTitle)
+        let marker = PinView(with: latitude, and: longitude, with: placeName)
+        marker.image = image
         
         mapView.addAnnotation(marker)
     }
@@ -66,7 +69,67 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         presenter.searchPlaces()
     }
     
+    // MARK: - MKMapViewDelegate
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+        if !(annotation is PinView){
+            return nil
+        }
+        
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        let pin = annotation as! PinView
+        
+        let imageView = UIImageView();
+        let pinImage = pin.image;
+        imageView.image = pinImage;
+        imageView.addConstraint(NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutAttribute.height,
+            relatedBy: NSLayoutRelation.equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.notAnAttribute,
+            multiplier: zero,
+            constant: constraintConst))
+        
+        imageView.addConstraint(NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutAttribute.width,
+            relatedBy: NSLayoutRelation.equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.notAnAttribute,
+            multiplier: zero,
+            constant: constraintConst))
+        
+        annotationView?.detailCalloutAccessoryView = imageView
+        
+        
+        let leftAccessory = UILabel()
+        leftAccessory.font = UIFont(name: pin.title!, size: fontSize)
+        annotationView?.leftCalloutAccessoryView = leftAccessory
+        
+        let button = UIButton(type: .infoDark)
+        button.frame = CGRect(x: zero, y: zero, width: buttonFrameSize, height: buttonFrameSize)
+        
+        annotationView?.rightCalloutAccessoryView = button
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        //open next view
+        
+    }
+    
+
+
 }
-
-
-

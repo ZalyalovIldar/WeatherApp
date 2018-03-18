@@ -14,6 +14,8 @@ protocol MapRouterProtocol {
     
     func closeAutoCompleteController()
     
-    func showError(with message: String)
+    func showAutoCompleteErrorAlert(with message: String)
+    
+    func showErrorAlert(with: String)
     
 }

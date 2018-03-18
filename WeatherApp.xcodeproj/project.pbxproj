@@ -12,9 +12,17 @@
 		7C7CC954204D91C2006EBF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC952204D91C2006EBF80 /* Main.storyboard */; };
 		7C7CC956204D91C2006EBF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC955204D91C2006EBF80 /* Assets.xcassets */; };
 		7C7CC959204D91C2006EBF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC957204D91C2006EBF80 /* LaunchScreen.storyboard */; };
+		C31E9A2A205EBD1F003A4FCB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E9A29205EBD1F003A4FCB /* ImageManager.swift */; };
+		C31E9A2C205EBD31003A4FCB /* ImageManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E9A2B205EBD31003A4FCB /* ImageManagerProtocol.swift */; };
+		C31E9A2E205EBD4B003A4FCB /* ImageManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E9A2D205EBD4B003A4FCB /* ImageManagerDelegate.swift */; };
 		C35E9DDF205AFC52000452F2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DDE205AFC52000452F2 /* LocationManager.swift */; };
 		C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */; };
 		C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */; };
+		C3604C48205E78E900C17183 /* GetCoatOfArmsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3604C47205E78E900C17183 /* GetCoatOfArmsRequest.swift */; };
+		C36A7BF1205DAC030048097B /* MapApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A7BF0205DAC030048097B /* MapApiProvider.swift */; };
+		C36A7BF4205DBDEB0048097B /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A7BF3205DBDEB0048097B /* MapService.swift */; };
+		C36A7BF6205DBDFC0048097B /* MapServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A7BF5205DBDFC0048097B /* MapServiceImplementation.swift */; };
+		C36A7BF8205DBFDA0048097B /* MapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A7BF7205DBFDA0048097B /* MapInfo.swift */; };
 		C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE052052F8630092D02E /* MapViewOutput.swift */; };
 		C37ECE082052FA120092D02E /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE072052FA120092D02E /* MapPresenter.swift */; };
 		C37ECE0A2052FA280092D02E /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37ECE092052FA280092D02E /* MapInteractor.swift */; };
@@ -89,9 +97,17 @@
 		7C7CC955204D91C2006EBF80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7CC958204D91C2006EBF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C7CC95A204D91C2006EBF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31E9A29205EBD1F003A4FCB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		C31E9A2B205EBD31003A4FCB /* ImageManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerProtocol.swift; sourceTree = "<group>"; };
+		C31E9A2D205EBD4B003A4FCB /* ImageManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerDelegate.swift; sourceTree = "<group>"; };
 		C35E9DDE205AFC52000452F2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerProtocol.swift; sourceTree = "<group>"; };
 		C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
+		C3604C47205E78E900C17183 /* GetCoatOfArmsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoatOfArmsRequest.swift; sourceTree = "<group>"; };
+		C36A7BF0205DAC030048097B /* MapApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApiProvider.swift; sourceTree = "<group>"; };
+		C36A7BF3205DBDEB0048097B /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		C36A7BF5205DBDFC0048097B /* MapServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServiceImplementation.swift; sourceTree = "<group>"; };
+		C36A7BF7205DBFDA0048097B /* MapInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfo.swift; sourceTree = "<group>"; };
 		C37ECE032052F84F0092D02E /* MapViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInput.swift; sourceTree = "<group>"; };
 		C37ECE052052F8630092D02E /* MapViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewOutput.swift; sourceTree = "<group>"; };
 		C37ECE072052FA120092D02E /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
@@ -221,6 +237,16 @@
 			path = WeatherApp;
 			sourceTree = "<group>";
 		};
+		C31E9A28205EBCFB003A4FCB /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				C31E9A29205EBD1F003A4FCB /* ImageManager.swift */,
+				C31E9A2B205EBD31003A4FCB /* ImageManagerProtocol.swift */,
+				C31E9A2D205EBD4B003A4FCB /* ImageManagerDelegate.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
 		C35E9DDD205AFC1A000452F2 /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,10 +257,45 @@
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
+		C3604C46205E78B900C17183 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C3604C47205E78E900C17183 /* GetCoatOfArmsRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C36A7BEE205DAB3C0048097B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C3604C46205E78B900C17183 /* Request */,
+				C36A7BEF205DAB730048097B /* Provider */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C36A7BEF205DAB730048097B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C36A7BF0205DAC030048097B /* MapApiProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		C36A7BF2205DBDD20048097B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C36A7BF3205DBDEB0048097B /* MapService.swift */,
+				C36A7BF5205DBDFC0048097B /* MapServiceImplementation.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C37ECDF92052F78C0092D02E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				C37F7806205C501A00F613C2 /* Place.swift */,
+				C36A7BF7205DBFDA0048097B /* MapInfo.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -381,6 +442,8 @@
 		CB57C895204FD4DC00B84F39 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				C31E9A28205EBCFB003A4FCB /* ImageManager */,
+				C36A7BF2205DBDD20048097B /* Services */,
 				C37F77FD205C2FA500F613C2 /* AutoCompleteManager */,
 				C35E9DDD205AFC1A000452F2 /* LocationManager */,
 				C37ECDFE2052F7C70092D02E /* View */,
@@ -517,6 +580,7 @@
 		CB67AFF82051747D0024BB75 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C36A7BEE205DAB3C0048097B /* Map */,
 				CB67AFF9205174830024BB75 /* Weather */,
 				CB67AFFA205174950024BB75 /* Request.swift */,
 				CB67B002205184B80024BB75 /* ApiProvider.swift */,
@@ -711,6 +775,7 @@
 				CB19A482205D55CD00ED0936 /* WeatherInfoInteractorInput.swift in Sources */,
 				C37F7809205C7FE600F613C2 /* MapViewInput.swift in Sources */,
 				C37F7808205C7F7700F613C2 /* WeatherViewInput.swift in Sources */,
+				C3604C48205E78E900C17183 /* GetCoatOfArmsRequest.swift in Sources */,
 				CB57C8A0204FD7F200B84F39 /* CommonAlertsFactory.swift in Sources */,
 				CB652B862059207F00019484 /* SegueHandler.swift in Sources */,
 				CB19A47B205D55B600ED0936 /* WeatherInfoRouter.swift in Sources */,
@@ -736,16 +801,21 @@
 				CB67B003205184B80024BB75 /* ApiProvider.swift in Sources */,
 				CB652B8420591FAB00019484 /* WeatherViewControllerSegues.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
+				C36A7BF8205DBFDA0048097B /* MapInfo.swift in Sources */,
 				CB1D9F832056F5FB007965B6 /* WeatherInfoViewController.swift in Sources */,
 				C37ECE082052FA120092D02E /* MapPresenter.swift in Sources */,
 				C37F7801205C301D00F613C2 /* AutoCompleteManager.swift in Sources */,
 				C37ECE062052F8630092D02E /* MapViewOutput.swift in Sources */,
 				CB57C8BE2050659500B84F39 /* WeatherModuleInput.swift in Sources */,
+				C36A7BF6205DBDFC0048097B /* MapServiceImplementation.swift in Sources */,
 				C37F7807205C501A00F613C2 /* Place.swift in Sources */,
+				C36A7BF4205DBDEB0048097B /* MapService.swift in Sources */,
 				C37ECE122052FA850092D02E /* MapRouter.swift in Sources */,
 				C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */,
+				C31E9A2C205EBD31003A4FCB /* ImageManagerProtocol.swift in Sources */,
 				C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */,
 				C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */,
+				C31E9A2A205EBD1F003A4FCB /* ImageManager.swift in Sources */,
 				FF6BF4762051D4D900FB81A2 /* GetLocationWeatherRequest.swift in Sources */,
 				CB97687120586DE200044031 /* ModuleInputHolder.swift in Sources */,
 				CB22521B205196C500FF636A /* WeatherInfo.swift in Sources */,
@@ -758,6 +828,7 @@
 				CB57C8A92050636900B84F39 /* WeatherViewController.swift in Sources */,
 				CB6757E42052CD5E0080ED3B /* WeatherCollectionInfo.swift in Sources */,
 				CB57C89E204FD78D00B84F39 /* CommonAlertsFactoryProtocol.swift in Sources */,
+				C36A7BF1205DAC030048097B /* MapApiProvider.swift in Sources */,
 				C37ECE142052FA940092D02E /* MapRouterProtocol.swift in Sources */,
 				CB57C8BA2050648900B84F39 /* WeatherRouterProtocol.swift in Sources */,
 				CB1D9F892056F706007965B6 /* WeatherInfoPresenter.swift in Sources */,
@@ -770,6 +841,7 @@
 				CB67AFFB205174950024BB75 /* Request.swift in Sources */,
 				CB1D9F852056F623007965B6 /* WeatherInfoInput.swift in Sources */,
 				CB57C8B82050646300B84F39 /* WeatherConfigurator.swift in Sources */,
+				C31E9A2E205EBD4B003A4FCB /* ImageManagerDelegate.swift in Sources */,
 				C37ECE0C2052FA380092D02E /* MapInteractorInput.swift in Sources */,
 				C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */,
 				CB57C8BC205064EB00B84F39 /* WeatherRouter.swift in Sources */,
