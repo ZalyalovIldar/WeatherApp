@@ -22,6 +22,7 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     let constraintConst: CGFloat = 120
     let buttonFrameSize: CGFloat = 30
     let fontSize: CGFloat = 10
+    let pinIdentifier = "Pin"
     
     override func viewDidLoad() {
         
@@ -42,9 +43,8 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
         self.navigationItem.leftBarButtonItem = buttonItem
         self.camera = mapView.camera
-        
-        //
         mapView.delegate = self
+        
     }
     
     func getUserLocation() {
@@ -77,10 +77,10 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
             return nil
         }
         
-        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: pinIdentifier)
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
             annotationView?.canShowCallout = true
         } else {
             annotationView?.annotation = annotation
@@ -129,7 +129,5 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         //open next view
         
     }
-    
-
 
 }

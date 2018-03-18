@@ -10,6 +10,11 @@ import Foundation
 
 protocol ImageManagerProtocol {
     
+    /// To get image from url
+    ///
+    /// - Parameters:
+    ///   - imageURL: url of image
+    ///   - place: Place which be shown on a map
     func getImageFromUrl(imageURL: URL, place: Place)
     
 }

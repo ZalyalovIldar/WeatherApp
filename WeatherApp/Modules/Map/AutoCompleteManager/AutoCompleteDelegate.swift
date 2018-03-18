@@ -10,10 +10,17 @@ import Foundation
 
 protocol AutoCompleteDelegate {
     
+    /// Result of auto complete
     func didFinishAutoComplete()
     
+    /// Show alert if auto complete finished with error
     func showAutoCompleteError(with message: String)
     
+    /// To define city
+    ///
+    /// - Parameters:
+    ///   - name: city name
+    ///   - place: struct Place
     func cityIsDefined(name: String, place: Place)
     
 }

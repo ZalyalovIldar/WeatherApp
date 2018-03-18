@@ -42,7 +42,6 @@ class AutoCompleteManager: NSObject, AutoCompleteManagerProtocol, GMSAutocomplet
         
         autoCompleteDelegate.cityIsDefined(name: searchedPlace.placeName, place: searchedPlace)
         autoCompleteDelegate.didFinishAutoComplete()
-//        autoCompleteDelegate.show(place: searchedPlace)
 
     }
     

@@ -10,6 +10,11 @@ import Foundation
 
 protocol ImageManagerDelegate {
     
+    /// To get PhotoModel of coat of arms
+    ///
+    /// - Parameters:
+    ///   - image: struct PhotoModel
+    ///   - place: Place which be shown on a map
     func getCoatOfArms(image: PhotoModel, place: Place)
     
 }

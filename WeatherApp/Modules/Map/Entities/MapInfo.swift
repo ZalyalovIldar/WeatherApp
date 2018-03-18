@@ -19,9 +19,4 @@ struct MapInfo: Codable {
     
 }
 
-extension MapInfo {
-    
-   
-}
-
 
