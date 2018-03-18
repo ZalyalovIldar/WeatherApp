@@ -18,6 +18,11 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     
     var camera: MKMapCamera!
     
+    let zero: CGFloat = 0
+    let constraintConst: CGFloat = 120
+    let buttonFrameSize: CGFloat = 30
+    let fontSize: CGFloat = 10
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -46,19 +51,13 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         presenter.getCoordinates()
     }
     
-    func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?, image: UIImage) {
+    func setCamera(latitude: Double, longitude: Double, placeName: String, image: UIImage) {
 
         camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
         
         self.mapView.setCamera(camera, animated: true)
         
-        var markerTitle = placeName
-        
-        if let address = placeFormattedAddress {
-            markerTitle = placeName + " " + address
-        }
-        
-        let marker = PinView(with: latitude, and: longitude, with: markerTitle)
+        let marker = PinView(with: latitude, and: longitude, with: placeName)
         marker.image = image
         
         mapView.addAnnotation(marker)
@@ -88,17 +87,42 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         }
         
         let pin = annotation as! PinView
-        annotationView?.detailCalloutAccessoryView = UIImageView(image: pin.image)
         
-        let leftAccessory = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 15))
-        leftAccessory.font = UIFont(name: pin.title!, size: 7)
+        let imageView = UIImageView();
+        let pinImage = pin.image;
+        imageView.image = pinImage;
+        imageView.addConstraint(NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutAttribute.height,
+            relatedBy: NSLayoutRelation.equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.notAnAttribute,
+            multiplier: zero,
+            constant: constraintConst))
+        
+        imageView.addConstraint(NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutAttribute.width,
+            relatedBy: NSLayoutRelation.equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.notAnAttribute,
+            multiplier: zero,
+            constant: constraintConst))
+        
+        annotationView?.detailCalloutAccessoryView = imageView
+        
+        
+        let leftAccessory = UILabel()
+        leftAccessory.font = UIFont(name: pin.title!, size: fontSize)
         annotationView?.leftCalloutAccessoryView = leftAccessory
         
         let image = UIImage(named: "Image")
         let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.frame = CGRect(x: zero, y: zero, width: buttonFrameSize, height: buttonFrameSize)
         button.setImage(image, for: UIControlState())
+        
         annotationView?.rightCalloutAccessoryView = button
+        
         return annotationView
     }
     

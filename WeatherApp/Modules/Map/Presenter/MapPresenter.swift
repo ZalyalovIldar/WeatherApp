@@ -69,9 +69,8 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
         let latitude = place.latitude
         let longitude = place.longitude
         let placeName = place.placeName
-        let placeFormattedAddress = place.placeFormattedAddress
         
-        view.setCamera(latitude: latitude, longitude: longitude, placeName: placeName, placeFormattedAddress: placeFormattedAddress, image: image.photo)
+        view.setCamera(latitude: latitude, longitude: longitude, placeName: placeName, image: image.photo)
     }
     
 }
