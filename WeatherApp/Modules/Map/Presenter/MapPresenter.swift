@@ -24,6 +24,10 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
     
     // MARK: - MapViewOutput
     
+    func setCity(_ city: String) {
+        interactor.setCity(city)
+    }
+    
     func getCoordinates() {
         interactor.getUsersCoordinates()
     }
@@ -54,7 +58,23 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
     }
     
     func showAutoCompleteError(with message: String) {
-        router.showError(with: message)
+        router.showAutoCompleteErrorAlert(with: message)
+    }
+    
+    func cityIsDefined(name: String) {
+        self.setCity(name)
+    }
+    
+    // MARK: - MapInteractorOutput
+    
+    func getCoatOfArmsSuccess(with mapInfo: MapInfo) {
+        guard let contentURL = mapInfo.value.first?.contentUrl else { return }
+        
+        //set coat of arms to pin view
+    }
+    
+    func getCoatOfArmsFailure(with message: String) {
+        router.showErrorAlert(with: message)
     }
 
 }

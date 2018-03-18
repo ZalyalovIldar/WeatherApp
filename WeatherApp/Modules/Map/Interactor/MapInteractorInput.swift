@@ -12,4 +12,6 @@ protocol MapInteractorInput {
     
     func getUsersCoordinates()
     
+    func setCity(_ city: String)
+    
 }

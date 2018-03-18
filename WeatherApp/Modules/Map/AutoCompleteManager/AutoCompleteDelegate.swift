@@ -16,4 +16,6 @@ protocol AutoCompleteDelegate {
     
     func showAutoCompleteError(with message: String)
     
+    func cityIsDefined(name: String)
+    
 }

@@ -22,6 +22,8 @@ class MapApiProvider: ApiProvider {
         guard let baseURL = self.baseURL else { return }
         let url = baseURL.appendingPathComponent(request.endPoint)
         
+        var parameters = request.parameters
+        
         Alamofire.request(url, method: request.method, headers: headers)
             .validate()
             .responseData { (response) in

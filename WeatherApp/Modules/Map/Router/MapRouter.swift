@@ -28,10 +28,15 @@ class MapRouter: MapRouterProtocol {
         view.dismiss(animated: true, completion: nil)
     }
     
-    func showError(with message: String) {
+    func showAutoCompleteErrorAlert(with message: String) {
         let alertController = alertsFactory.getErrorAlert(with: message)
         let currentController = autoCompleteManager.getAutoCompleteController()
         currentController.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showErrorAlert(with message: String) {
+        let alert = alertsFactory.getErrorAlert(with: message)
+        view.present(alert, animated: true, completion: nil)
     }
 
 }
