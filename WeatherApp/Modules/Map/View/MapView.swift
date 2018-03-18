@@ -29,6 +29,14 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         presenter.viewIsReady()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifierCase(for: segue) {
+        case .weatherSegue:
+            guard let moduleInputHolder = segue.destination as? ModuleInputHolder else { return }
+            moduleInputHolder.moduleInput?.setData(sender)
+        }
+    }
+    
     // MARK: - MapViewInput
     
     func setUserLocation(latitude: Double, longitude: Double) {
@@ -125,9 +133,7 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        //open next view
-        
+        presenter.showWeatherScreen()
     }
     
 

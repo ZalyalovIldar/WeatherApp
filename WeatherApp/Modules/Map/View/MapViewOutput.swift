@@ -18,4 +18,7 @@ protocol MapViewOutput: class {
     func searchPlaces()
     
     func didFinishAutoComplete()
+    
+    /// Show weather info screen
+    func showWeatherScreen()
 }
