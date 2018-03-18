@@ -230,6 +230,7 @@
 		7C7CC94D204D91C2006EBF80 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CB72B922205F0995006B7FB9 /* Managers */,
 				CB67AFF3205173CD0024BB75 /* Services */,
 				CB67AFF82051747D0024BB75 /* API */,
 				CB57C897204FD4FB00B84F39 /* Helpers */,
@@ -282,15 +283,6 @@
 				C36A7BF0205DAC030048097B /* MapApiProvider.swift */,
 			);
 			path = Provider;
-			sourceTree = "<group>";
-		};
-		C36A7BF2205DBDD20048097B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C36A7BF3205DBDEB0048097B /* MapService.swift */,
-				C36A7BF5205DBDFC0048097B /* MapServiceImplementation.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		C37ECDF92052F78C0092D02E /* Entities */ = {
@@ -445,10 +437,6 @@
 			isa = PBXGroup;
 			children = (
 				CB72B91F205F014E006B7FB9 /* Helpers */,
-				C31E9A28205EBCFB003A4FCB /* ImageManager */,
-				C36A7BF2205DBDD20048097B /* Services */,
-				C37F77FD205C2FA500F613C2 /* AutoCompleteManager */,
-				C35E9DDD205AFC1A000452F2 /* LocationManager */,
 				C37ECDFE2052F7C70092D02E /* View */,
 				C37ECDFD2052F7BA0092D02E /* Presenter */,
 				C37ECDFC2052F7B10092D02E /* Interactor */,
@@ -574,6 +562,8 @@
 		CB67AFF3205173CD0024BB75 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C36A7BF3205DBDEB0048097B /* MapService.swift */,
+				C36A7BF5205DBDFC0048097B /* MapServiceImplementation.swift */,
 				CB67AFF4205174320024BB75 /* WeatherService.swift */,
 				CB67AFF6205174590024BB75 /* WeatherServiceImpementation.swift */,
 			);
@@ -606,6 +596,16 @@
 				CB72B920205F0175006B7FB9 /* MapViewControllerSegues.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CB72B922205F0995006B7FB9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C31E9A28205EBCFB003A4FCB /* ImageManager */,
+				C37F77FD205C2FA500F613C2 /* AutoCompleteManager */,
+				C35E9DDD205AFC1A000452F2 /* LocationManager */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		CB9768742058737E00044031 /* Entities */ = {
