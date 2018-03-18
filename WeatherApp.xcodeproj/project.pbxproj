@@ -33,6 +33,20 @@
 		FFD95195205DC537006724C2 /* WheatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95194205DC537006724C2 /* WheatherViewController.swift */; };
 		FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */; };
 		FFD95199205DC5DA006724C2 /* MapAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95198205DC5D9006724C2 /* MapAPIManager.swift */; };
+		FFD951A0205EB9C8006724C2 /* CityPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD9519F205EB9C8006724C2 /* CityPhoto.swift */; };
+		FFD951A2205EBA45006724C2 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951A1205EBA45006724C2 /* Coordinates.swift */; };
+		FFD951A4205EBB02006724C2 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951A3205EBB02006724C2 /* WeatherInfo.swift */; };
+		FFD951A6205ECD11006724C2 /* WheatherAPIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951A5205ECD11006724C2 /* WheatherAPIManagerProtocol.swift */; };
+		FFD951AC205ED784006724C2 /* WheatherViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951AB205ED784006724C2 /* WheatherViewOutput.swift */; };
+		FFD951AE205ED799006724C2 /* WheatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951AD205ED799006724C2 /* WheatherInteractor.swift */; };
+		FFD951B0205ED7A8006724C2 /* WheatherInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951AF205ED7A8006724C2 /* WheatherInteractorInput.swift */; };
+		FFD951B2205ED7B3006724C2 /* WheatherInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951B1205ED7B3006724C2 /* WheatherInteractorOutput.swift */; };
+		FFD951B4205ED7BE006724C2 /* WheatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951B3205ED7BE006724C2 /* WheatherPresenter.swift */; };
+		FFD951B7205ED889006724C2 /* WheaterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951B6205ED889006724C2 /* WheaterConfigurator.swift */; };
+		FFD951B9205EDF65006724C2 /* WheatherViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951B8205EDF65006724C2 /* WheatherViewInput.swift */; };
+		FFD951BE205EE799006724C2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951BD205EE799006724C2 /* Image.swift */; };
+		FFD951C0205F0BEF006724C2 /* GoogleQueryApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */; };
+		FFD951C2205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +80,20 @@
 		FFD95194205DC537006724C2 /* WheatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewController.swift; sourceTree = "<group>"; };
 		FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherAPIManager.swift; sourceTree = "<group>"; };
 		FFD95198205DC5D9006724C2 /* MapAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAPIManager.swift; sourceTree = "<group>"; };
+		FFD9519F205EB9C8006724C2 /* CityPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPhoto.swift; sourceTree = "<group>"; };
+		FFD951A1205EBA45006724C2 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		FFD951A3205EBB02006724C2 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		FFD951A5205ECD11006724C2 /* WheatherAPIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherAPIManagerProtocol.swift; sourceTree = "<group>"; };
+		FFD951AB205ED784006724C2 /* WheatherViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewOutput.swift; sourceTree = "<group>"; };
+		FFD951AD205ED799006724C2 /* WheatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherInteractor.swift; sourceTree = "<group>"; };
+		FFD951AF205ED7A8006724C2 /* WheatherInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherInteractorInput.swift; sourceTree = "<group>"; };
+		FFD951B1205ED7B3006724C2 /* WheatherInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherInteractorOutput.swift; sourceTree = "<group>"; };
+		FFD951B3205ED7BE006724C2 /* WheatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherPresenter.swift; sourceTree = "<group>"; };
+		FFD951B6205ED889006724C2 /* WheaterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterConfigurator.swift; sourceTree = "<group>"; };
+		FFD951B8205EDF65006724C2 /* WheatherViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewInput.swift; sourceTree = "<group>"; };
+		FFD951BD205EE799006724C2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleQueryApiManager.swift; sourceTree = "<group>"; };
+		FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleQueryApiManagerImplementation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				FFD95198205DC5D9006724C2 /* MapAPIManager.swift */,
+				FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */,
+				FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */,
 			);
 			path = MapAPI;
 			sourceTree = "<group>";
@@ -233,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */,
+				FFD951A5205ECD11006724C2 /* WheatherAPIManagerProtocol.swift */,
 			);
 			path = WeatherAPI;
 			sourceTree = "<group>";
@@ -257,6 +288,12 @@
 		FFD9518F205DC506006724C2 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FFD951BC205EE789006724C2 /* Helpers */,
+				FFD951B5205ED867006724C2 /* Configurator */,
+				FFD9519D205DD3A1006724C2 /* Router */,
+				FFD9519C205DD398006724C2 /* Entities */,
+				FFD9519B205DD38F006724C2 /* Presenter */,
+				FFD9519A205DD37A006724C2 /* Interactor */,
 				FFD95191205DC51A006724C2 /* View */,
 			);
 			path = Weather;
@@ -276,8 +313,61 @@
 			isa = PBXGroup;
 			children = (
 				FFD95194205DC537006724C2 /* WheatherViewController.swift */,
+				FFD951AB205ED784006724C2 /* WheatherViewOutput.swift */,
+				FFD951B8205EDF65006724C2 /* WheatherViewInput.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FFD9519A205DD37A006724C2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FFD951AD205ED799006724C2 /* WheatherInteractor.swift */,
+				FFD951AF205ED7A8006724C2 /* WheatherInteractorInput.swift */,
+				FFD951B1205ED7B3006724C2 /* WheatherInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FFD9519B205DD38F006724C2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FFD951B3205ED7BE006724C2 /* WheatherPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FFD9519C205DD398006724C2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FFD9519F205EB9C8006724C2 /* CityPhoto.swift */,
+				FFD951A1205EBA45006724C2 /* Coordinates.swift */,
+				FFD951A3205EBB02006724C2 /* WeatherInfo.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FFD9519D205DD3A1006724C2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FFD951B5205ED867006724C2 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				FFD951B6205ED889006724C2 /* WheaterConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		FFD951BC205EE789006724C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFD951BD205EE799006724C2 /* Image.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,7 +507,14 @@
 				953C6CAC205F061F00BF24A4 /* LocationManagerImplementation.swift in Sources */,
 				953C6C96205F050200BF24A4 /* MapManagerImplementation.swift in Sources */,
 				953C6CAA205F061700BF24A4 /* LocationManager.swift in Sources */,
+				FFD951A4205EBB02006724C2 /* WeatherInfo.swift in Sources */,
+				FFD951BE205EE799006724C2 /* Image.swift in Sources */,
 				FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */,
+				FFD951C2205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift in Sources */,
+				FFD951B7205ED889006724C2 /* WheaterConfigurator.swift in Sources */,
+				FFD951B4205ED7BE006724C2 /* WheatherPresenter.swift in Sources */,
+				FFD951AE205ED799006724C2 /* WheatherInteractor.swift in Sources */,
+				FFD951B0205ED7A8006724C2 /* WheatherInteractorInput.swift in Sources */,
 				FFD95199205DC5DA006724C2 /* MapAPIManager.swift in Sources */,
 				953C6C9E205F05A700BF24A4 /* MapInteractor.swift in Sources */,
 				953C6CB5205F06DD00BF24A4 /* AppStoryboards.swift in Sources */,
@@ -427,8 +524,15 @@
 				953C6CA0205F05B100BF24A4 /* MapInteractorInput.swift in Sources */,
 				953C6CA5205F05E600BF24A4 /* GMSAutocompleteManager.swift in Sources */,
 				953C6C9A205F056B00BF24A4 /* ImageResizeExtensions.swift in Sources */,
+				FFD951B9205EDF65006724C2 /* WheatherViewInput.swift in Sources */,
+				FFD951B2205ED7B3006724C2 /* WheatherInteractorOutput.swift in Sources */,
+				FFD951C0205F0BEF006724C2 /* GoogleQueryApiManager.swift in Sources */,
+				FFD951AC205ED784006724C2 /* WheatherViewOutput.swift in Sources */,
+				FFD951A6205ECD11006724C2 /* WheatherAPIManagerProtocol.swift in Sources */,
+				FFD951A2205EBA45006724C2 /* Coordinates.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
 				953C6C98205F053F00BF24A4 /* ViewControllerInitiate.swift in Sources */,
+				FFD951A0205EB9C8006724C2 /* CityPhoto.swift in Sources */,
 				FFD95193205DC525006724C2 /* MapViewController.swift in Sources */,
 				953C6C94205F04F900BF24A4 /* MapManager.swift in Sources */,
 				953C6C91205F04DB00BF24A4 /* ImageStruct.swift in Sources */,
