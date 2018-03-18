@@ -12,8 +12,9 @@ protocol MapInteractorInput {
     
     func getUsersCoordinates()
     
-    func getCoatOfArmsImage(from url: URL)
+    func getCoatOfArmsImage(from url: URL, place: Place)
     
-    func getCoatOfArms(of city: String)
+    func getCoatOfArms(of city: String, place: Place)
+    
     
 }

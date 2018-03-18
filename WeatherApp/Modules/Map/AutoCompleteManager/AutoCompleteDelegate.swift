@@ -12,10 +12,8 @@ protocol AutoCompleteDelegate {
     
     func didFinishAutoComplete()
     
-    func show(place: Place)
-    
     func showAutoCompleteError(with message: String)
     
-    func cityIsDefined(name: String)
+    func cityIsDefined(name: String, place: Place)
     
 }

@@ -31,10 +31,6 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         self.mapView.setCamera(camera, animated: true)
     }
     
-    func setCoatOfArmy(image: UIImage) {
-        //set image
-    }
-    
     func setUpMap() {
         
         mapView.showsUserLocation = true
@@ -50,7 +46,7 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         presenter.getCoordinates()
     }
     
-    func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?) {
+    func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?, image: UIImage) {
 
         camera.centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
         
@@ -63,6 +59,7 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         }
         
         let marker = PinView(with: latitude, and: longitude, with: markerTitle)
+        marker.image = image
         
         mapView.addAnnotation(marker)
     }
@@ -76,13 +73,41 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     // MARK: - MKMapViewDelegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let view = MKPinAnnotationView()
-        view.pinTintColor = UIColor.blue
+
+        if !(annotation is PinView){
+            return nil
+        }
         
-        return view
+        var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        let pin = annotation as! PinView
+        annotationView?.detailCalloutAccessoryView = UIImageView(image: pin.image)
+        
+        let leftAccessory = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 15))
+        leftAccessory.font = UIFont(name: pin.title!, size: 7)
+        annotationView?.leftCalloutAccessoryView = leftAccessory
+        
+        let image = UIImage(named: "Image")
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.setImage(image, for: UIControlState())
+        annotationView?.rightCalloutAccessoryView = button
+        return annotationView
     }
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let placemark = MKPlacemark(coordinate: view.annotation!.coordinate, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeTransit]
+        mapItem.openInMaps(launchOptions: launchOptions)
+    }
+
 }
-
-
-

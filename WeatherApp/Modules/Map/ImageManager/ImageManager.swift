@@ -19,14 +19,14 @@ class ImageManager: ImageManagerProtocol {
         self.manager = SDWebImageManager.shared()
     }
     
-    func getImageFromUrl(imageURL: URL) {
+    func getImageFromUrl(imageURL: URL, place: Place) {
         self.manager.imageDownloader?.downloadImage(with: imageURL,
                                                     options: SDWebImageDownloaderOptions.highPriority,
                                                     progress: nil,
                                                     completed: { (image, data, error, finished) in
                                                         if (finished && error == nil), let image = image {
                                                             let photoModel = PhotoModel(photo: image)
-                                                            self.delegate.getCoatOfArms(image: photoModel)
+                                                            self.delegate.getCoatOfArms(image: photoModel, place: place)
                                                         }
         })
     }

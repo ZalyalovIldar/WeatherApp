@@ -10,6 +10,6 @@ import Foundation
 
 protocol ImageManagerDelegate {
     
-    func getCoatOfArms(image: PhotoModel)
+    func getCoatOfArms(image: PhotoModel, place: Place)
     
 }

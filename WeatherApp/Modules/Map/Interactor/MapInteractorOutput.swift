@@ -10,6 +10,6 @@ import Foundation
 
 protocol MapInteractorOutput: class {
         
-    func getCoatOfArmsResult(with response: Response<MapInfo>)
+    func getCoatOfArmsResult(with response: Response<MapInfo>, place: Place)
     
 }

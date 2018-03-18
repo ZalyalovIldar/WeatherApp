@@ -10,7 +10,7 @@ import Foundation
 
 protocol ImageManagerProtocol {
     
-    func getImageFromUrl(imageURL: URL)
+    func getImageFromUrl(imageURL: URL, place: Place)
     
 }
 
