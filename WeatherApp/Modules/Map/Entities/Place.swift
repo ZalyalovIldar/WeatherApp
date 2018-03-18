@@ -15,5 +15,6 @@ struct Place {
     let longitude: Double
     let placeName: String
     let placeFormattedAddress: String?
+    let placeID: String
     
 }

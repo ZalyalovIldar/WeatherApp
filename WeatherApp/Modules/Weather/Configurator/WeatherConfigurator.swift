@@ -21,6 +21,7 @@ class WeatherConfigurator {
         weatherService.apiProvider = apiProvier
         
         viewController.presenter = presenter
+        viewController.moduleInput = presenter
         
         presenter.view = viewController
         presenter.interactor = interactor

@@ -22,4 +22,7 @@ protocol MapViewOutput: class {
     
     /// Result of auto complete
     func didFinishAutoComplete()
+    
+    /// Show weather info screen
+    func showWeatherScreen()
 }

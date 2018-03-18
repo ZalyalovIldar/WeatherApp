@@ -26,4 +26,9 @@ protocol MapRouterProtocol {
     /// - Parameter with: message in alert
     func showErrorAlert(with: String)
     
+    /// Show weather info screen
+    ///
+    /// - Parameter place: place info
+    func showWeatherScreen(with place: Place)
+    
 }

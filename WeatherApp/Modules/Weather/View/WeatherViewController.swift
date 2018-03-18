@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, WeatherViewInput {
+class WeatherViewController: UIViewController, WeatherViewInput, ModuleInputHolder {
     
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController, WeatherViewInput {
     @IBOutlet weak var cityImageView: UIImageView!
     
     var presenter: WeatherViewOutput!
+    var moduleInput: ModuleInput?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModuleInput {
+class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, ModuleInput {
     
     weak var view: WeatherViewInput!
     var interactor: WeatherInteractorInput!
@@ -16,16 +16,10 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     
     //MARK: - module input
     
-    func setCity(_ city: String) {
-        interactor.setCity(city)
-    }
-    
-    func setCoordinates(longitude: Double, latidude: Double) {
-        interactor.setCoordinates(Coordinates(longitude: longitude, latitude: latidude))
-    }
-    
-    func setPlaceID(_ placeID: String) {
-        interactor.setPlaceID(placeID)
+    func setData(_ data: Any?) {
+        guard let place = data as? Place else { return }
+        interactor.setCoordinates(Coordinates(longitude: place.longitude, latitude: place.latitude))
+        interactor.setPlaceID(place.placeID)
     }
     
     // MARK: - view output

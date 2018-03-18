@@ -12,10 +12,10 @@ import UIKit
 class MapRouter: MapRouterProtocol {
     
     weak var view: UIViewController!
-    
     var autoCompleteManager: AutoCompleteManagerProtocol!
-    
     var alertsFactory: CommonAlertsFactoryProtocol!
+    
+    let weatherSegue = "weatherSegue"
     
     // MARK: - MapRouterProtocol
     
@@ -37,6 +37,10 @@ class MapRouter: MapRouterProtocol {
     func showErrorAlert(with message: String) {
         let alert = alertsFactory.getErrorAlert(with: message)
         view.present(alert, animated: true, completion: nil)
+    }
+    
+    func showWeatherScreen(with place: Place) {
+        view.performSegue(withIdentifier: weatherSegue, sender: place)
     }
 
 }

@@ -14,6 +14,8 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
     var router: MapRouterProtocol!
     var interactor: MapInteractorInput!
     
+    var currentPlace: Place?
+    
     // MARK: - LocationDelegate
     
     func coordinatesResult(with coordinates: Coordinates) {
@@ -37,6 +39,11 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
         router.showAutoCompleteController()
     }
     
+    func showWeatherScreen() {
+        guard let place = currentPlace else { return }
+        router.showWeatherScreen(with: place)
+    }
+    
     // MARK: - AutoCompleteDelegate
     
     func didFinishAutoComplete() {
@@ -48,8 +55,11 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
     }
     
     func cityIsDefined(name: String, place: Place) {
+        currentPlace = place
         interactor.getCoatOfArms(of: name, place: place)
     }
+    
+    
     
     // MARK: - MapInteractorOutput
     
