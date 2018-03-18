@@ -10,6 +10,9 @@ import Foundation
 
 protocol LocationDelegate {
     
+    /// Result of getting coordinates
+    ///
+    /// - Parameter coordinates: struct Coordinates
     func coordinatesResult(with coordinates: Coordinates)
     
 }

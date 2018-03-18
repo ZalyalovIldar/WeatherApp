@@ -10,12 +10,20 @@ import Foundation
 
 protocol MapRouterProtocol {
     
+    /// To show AutoCompleteController
     func showAutoCompleteController()
     
+    /// To close AutoCompleteController
     func closeAutoCompleteController()
     
+    /// To show alert with auto complete error
+    ///
+    /// - Parameter message: message in alert
     func showAutoCompleteErrorAlert(with message: String)
     
+    /// To show alert with error
+    ///
+    /// - Parameter with: message in alert
     func showErrorAlert(with: String)
     
 }

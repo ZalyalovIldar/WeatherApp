@@ -10,6 +10,7 @@ import Foundation
 
 protocol LocationManagerProtocol {
     
+    /// To get users current location
     func getCurrentLocation()
     
 }
