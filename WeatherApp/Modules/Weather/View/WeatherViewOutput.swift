@@ -10,8 +10,12 @@ import Foundation
 
 protocol WeatherViewOutput: class {
     
+    /// View lifecycle
     func viewIsReady()
-    func updateCurrentWeatherInfo(at indexPath: IndexPath)
-    func updateCurrentWeatherInfoCount()
+    
+    /// Setup link to inner collection view
+    ///
+    /// - Parameter moduleInput: input class of inner collection view
+    func setCollectionContainerModuleInput(_ moduleInput: ModuleInput)
     
 }

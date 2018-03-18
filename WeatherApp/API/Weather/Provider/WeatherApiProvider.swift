@@ -45,7 +45,10 @@ class WeatherApiProvider: ApiProvider {
                     completionBlock(nil)
                     return
                 }
-                
+                let printableData = String(data: data, encoding: .utf8)
+                print("*** Response Data ***")
+                print(printableData ?? "None")
+                print("*** End Response ***")
                 completionBlock(data)
         }
     }

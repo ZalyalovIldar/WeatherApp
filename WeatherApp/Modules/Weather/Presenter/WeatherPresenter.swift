@@ -31,24 +31,12 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
     // MARK: - view output
     
     func viewIsReady() {
-        view.prepareCollectionView()
         interactor.getWeatherFromCoordinates()
         interactor.loadPhotoForPlace()
     }
     
-    func updateCurrentWeatherInfo(at indexPath: IndexPath) {
-        guard let weatherCollectionInfo = interactor.getWeatherCollectionInfo() else { return }
-        let row = indexPath.row
-        let weatherInfo = weatherCollectionInfo[row]
-        
-        view.setCurrentWeatherInfoTitle(weatherInfo.title)
-        view.setCurrentWeatherInfo(weatherInfo.info)
-    }
-    
-    func updateCurrentWeatherInfoCount() {
-        guard let weatherCollectionInfo = interactor.getWeatherCollectionInfo() else { return }
-        view.setCurrentWeatherInfoCount(weatherCollectionInfo.count)
-        view.updatePageCount()
+    func setCollectionContainerModuleInput(_ moduleInput: ModuleInput) {
+        router.setCollectionContainerModuleInput(moduleInput)
     }
     
     // MARK: - interactor output
@@ -67,10 +55,11 @@ class WeatherPresenter: WeatherViewOutput, WeatherInteractorOutput, WeatherModul
         
         view.setState(state)
         view.setTemperature(temperature)
-        view.setSunsetTime(sunriseTime)
+        view.setSunriseTime(sunriseTime)
         view.setSunsetTime(sunsetTime)
         view.setCityTitle(weatherInfo.name)
-        view.reloadCollectionView()
+        
+        router.sendWeatherInfoToCollectionContainer(weatherInfo)
     }
     
     func getWeatherFailure(with message: String) {

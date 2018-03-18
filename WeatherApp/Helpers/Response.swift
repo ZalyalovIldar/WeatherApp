@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// Simple response with result
+///
+/// - success: result with entity
+/// - error: error with message
 enum Response<T> {
     case success(T)
     case error(String)

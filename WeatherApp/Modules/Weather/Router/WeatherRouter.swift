@@ -8,14 +8,25 @@
 
 import UIKit
 
+typealias SegueInput = ((ModuleInput?) -> Void)?
+
 class WeatherRouter: WeatherRouterProtocol {
     
     weak var view: UIViewController!
     var alertsFactory: CommonAlertsFactoryProtocol!
+    var collectionContainerModuleInput: ModuleInput?
     
     func showErrorAlert(with message: String) {
         let alert = alertsFactory.getErrorAlert(with: message)
         view.present(alert, animated: true, completion: nil)
+    }
+    
+    func setCollectionContainerModuleInput(_ moduleInput: ModuleInput) {
+        collectionContainerModuleInput = moduleInput
+    }
+    
+    func sendWeatherInfoToCollectionContainer(_ weatherInfo: WeatherInfo) {
+        collectionContainerModuleInput?.setData(weatherInfo)
     }
     
 }

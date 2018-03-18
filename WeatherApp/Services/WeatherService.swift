@@ -10,6 +10,11 @@ import Foundation
 
 protocol WeatherService: class {
     
+     /// Get weather info
+     ///
+     /// - Parameters:
+     ///   - request: request for send to API
+     ///   - completionBlock: block with result
      func getWeather(with request: Request, completionBlock: @escaping (Response<WeatherInfo>) -> Void)
     
 }

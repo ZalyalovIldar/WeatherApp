@@ -10,7 +10,7 @@ import Foundation
 
 class WeatherConfigurator {
     
-    static func setupModule(with viewController: WeatherViewController) -> WeatherModuleInput {
+    func setupModule(with viewController: WeatherViewController) {
         let presenter = WeatherPresenter()
         let interactor = WeatherInteractor()
         let router = WeatherRouter()
@@ -31,13 +31,6 @@ class WeatherConfigurator {
         
         router.alertsFactory = alertsFactory
         router.view = viewController
-        
-        //only test!
-        presenter.setCity("Moscow")
-        presenter.setCoordinates(longitude: 49.12214, latidude: 55.78874)
-        presenter.setPlaceID("ChIJmc2sfCutXkERZYyttbl3y38")
-        
-        return presenter
     }
     
 }

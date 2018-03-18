@@ -14,7 +14,6 @@ class WeatherInteractor: WeatherInteractorInput {
     private var currentCity: String?
     private var currentCoordinates: Coordinates?
     private var currentPlaceID: String?
-    private var currentWeatherCollectionInfo: [WeatherCollectionInfo]?
 
     var weatherService: WeatherService!
     weak var presenter: WeatherInteractorOutput!
@@ -58,17 +57,10 @@ class WeatherInteractor: WeatherInteractorInput {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             switch response {
-            case .success(let weatherInfo):
-                strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
-                strongSelf.currentWeatherCollectionInfo = weatherInfo.getCollectionInfo()
+            case .success(let weatherInfo): strongSelf.presenter.getWeatherSuccess(with: weatherInfo)
             case .error(let errorMessage): strongSelf.presenter.getWeatherFailure(with: errorMessage)
             }
         }
-    }
-    
-    func getWeatherCollectionInfo() -> [WeatherCollectionInfo]? {
-        guard let weatherCollectionInfo = currentWeatherCollectionInfo else { return nil }
-        return weatherCollectionInfo
     }
     
     func loadPhotoForPlace() {

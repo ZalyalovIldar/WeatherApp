@@ -9,17 +9,11 @@
 import Foundation
 import Alamofire
 
+/// Request to API
 protocol Request {
     
     var method: HTTPMethod { get }
     var endPoint: String { get }
     var parameters: [String: Any] { get }
     
-}
-
-enum Methods: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
 }
