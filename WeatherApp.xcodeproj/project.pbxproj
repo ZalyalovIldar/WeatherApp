@@ -45,6 +45,8 @@
 		FFD951B7205ED889006724C2 /* WheaterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951B6205ED889006724C2 /* WheaterConfigurator.swift */; };
 		FFD951B9205EDF65006724C2 /* WheatherViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951B8205EDF65006724C2 /* WheatherViewInput.swift */; };
 		FFD951BE205EE799006724C2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951BD205EE799006724C2 /* Image.swift */; };
+		FFD951C0205F0BEF006724C2 /* GoogleQueryApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */; };
+		FFD951C2205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		FFD951B6205ED889006724C2 /* WheaterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterConfigurator.swift; sourceTree = "<group>"; };
 		FFD951B8205EDF65006724C2 /* WheatherViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewInput.swift; sourceTree = "<group>"; };
 		FFD951BD205EE799006724C2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleQueryApiManager.swift; sourceTree = "<group>"; };
+		FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleQueryApiManagerImplementation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				FFD95198205DC5D9006724C2 /* MapAPIManager.swift */,
+				FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */,
+				FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */,
 			);
 			path = MapAPI;
 			sourceTree = "<group>";
@@ -498,20 +504,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953C6CAC205F061F00BF24A4 /* LocationManagerImplementation.swift in Sources */,
+				953C6C96205F050200BF24A4 /* MapManagerImplementation.swift in Sources */,
+				953C6CAA205F061700BF24A4 /* LocationManager.swift in Sources */,
 				FFD951A4205EBB02006724C2 /* WeatherInfo.swift in Sources */,
 				FFD951BE205EE799006724C2 /* Image.swift in Sources */,
 				FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */,
+				FFD951C2205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift in Sources */,
 				FFD951B7205ED889006724C2 /* WheaterConfigurator.swift in Sources */,
 				FFD951B4205ED7BE006724C2 /* WheatherPresenter.swift in Sources */,
 				FFD951AE205ED799006724C2 /* WheatherInteractor.swift in Sources */,
 				FFD951B0205ED7A8006724C2 /* WheatherInteractorInput.swift in Sources */,
 				FFD95199205DC5DA006724C2 /* MapAPIManager.swift in Sources */,
+				953C6C9E205F05A700BF24A4 /* MapInteractor.swift in Sources */,
+				953C6CB5205F06DD00BF24A4 /* AppStoryboards.swift in Sources */,
+				953C6C9C205F059100BF24A4 /* MapPresenter.swift in Sources */,
+				953C6CAE205F064A00BF24A4 /* MapViewInput.swift in Sources */,
+				953C6CB0205F065200BF24A4 /* MapViewOutput.swift in Sources */,
+				953C6CA0205F05B100BF24A4 /* MapInteractorInput.swift in Sources */,
+				953C6CA5205F05E600BF24A4 /* GMSAutocompleteManager.swift in Sources */,
+				953C6C9A205F056B00BF24A4 /* ImageResizeExtensions.swift in Sources */,
 				FFD951B9205EDF65006724C2 /* WheatherViewInput.swift in Sources */,
 				FFD951B2205ED7B3006724C2 /* WheatherInteractorOutput.swift in Sources */,
+				FFD951C0205F0BEF006724C2 /* GoogleQueryApiManager.swift in Sources */,
 				FFD951AC205ED784006724C2 /* WheatherViewOutput.swift in Sources */,
 				FFD951A6205ECD11006724C2 /* WheatherAPIManagerProtocol.swift in Sources */,
 				FFD951A2205EBA45006724C2 /* Coordinates.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
+				953C6C98205F053F00BF24A4 /* ViewControllerInitiate.swift in Sources */,
 				FFD951A0205EB9C8006724C2 /* CityPhoto.swift in Sources */,
 				FFD95193205DC525006724C2 /* MapViewController.swift in Sources */,
 				953C6C94205F04F900BF24A4 /* MapManager.swift in Sources */,

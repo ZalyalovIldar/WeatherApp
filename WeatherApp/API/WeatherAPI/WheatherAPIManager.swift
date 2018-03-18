@@ -42,7 +42,7 @@ class WheatherAPIManager: WheatherAPIManagerProtocol {
             }
             
             do {
-                let modelDictionary = try JSONDecoder().decode(Image.self, from: data!)
+                let modelDictionary = try JSONDecoder().decode(ImageWeather.self, from: data!)
                 guard let imageString = modelDictionary.items.first?.pagemap?.cse_thumbnail?.first?.src else { return }
                 print("КАРТИНКА \(imageString)")
                 

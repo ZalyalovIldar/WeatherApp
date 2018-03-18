@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Image: Codable {
+struct ImageWeather: Codable {
     struct Items: Codable {
         struct Pagemap: Codable {
             struct Cse_thumbnail: Codable {
