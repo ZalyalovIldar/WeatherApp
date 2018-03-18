@@ -12,6 +12,23 @@
 		7C7CC954204D91C2006EBF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC952204D91C2006EBF80 /* Main.storyboard */; };
 		7C7CC956204D91C2006EBF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC955204D91C2006EBF80 /* Assets.xcassets */; };
 		7C7CC959204D91C2006EBF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC957204D91C2006EBF80 /* LaunchScreen.storyboard */; };
+		953C6C91205F04DB00BF24A4 /* ImageStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C90205F04DB00BF24A4 /* ImageStruct.swift */; };
+		953C6C94205F04F900BF24A4 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C93205F04F900BF24A4 /* MapManager.swift */; };
+		953C6C96205F050200BF24A4 /* MapManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C95205F050200BF24A4 /* MapManagerImplementation.swift */; };
+		953C6C98205F053F00BF24A4 /* ViewControllerInitiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C97205F053F00BF24A4 /* ViewControllerInitiate.swift */; };
+		953C6C9A205F056B00BF24A4 /* ImageResizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C99205F056B00BF24A4 /* ImageResizeExtensions.swift */; };
+		953C6C9C205F059100BF24A4 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C9B205F059100BF24A4 /* MapPresenter.swift */; };
+		953C6C9E205F05A700BF24A4 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C9D205F05A600BF24A4 /* MapInteractor.swift */; };
+		953C6CA0205F05B100BF24A4 /* MapInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6C9F205F05B100BF24A4 /* MapInteractorInput.swift */; };
+		953C6CA2205F05BE00BF24A4 /* MapInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CA1205F05BD00BF24A4 /* MapInteractorOutput.swift */; };
+		953C6CA5205F05E600BF24A4 /* GMSAutocompleteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CA4205F05E600BF24A4 /* GMSAutocompleteManager.swift */; };
+		953C6CA7205F05F200BF24A4 /* GMSAutocompleteManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CA6205F05F200BF24A4 /* GMSAutocompleteManagerImplementation.swift */; };
+		953C6CAA205F061700BF24A4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CA9205F061700BF24A4 /* LocationManager.swift */; };
+		953C6CAC205F061F00BF24A4 /* LocationManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CAB205F061F00BF24A4 /* LocationManagerImplementation.swift */; };
+		953C6CAE205F064A00BF24A4 /* MapViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CAD205F064A00BF24A4 /* MapViewInput.swift */; };
+		953C6CB0205F065200BF24A4 /* MapViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CAF205F065200BF24A4 /* MapViewOutput.swift */; };
+		953C6CB3205F06CE00BF24A4 /* MapConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CB2205F06CE00BF24A4 /* MapConfigurator.swift */; };
+		953C6CB5205F06DD00BF24A4 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C6CB4205F06DD00BF24A4 /* AppStoryboards.swift */; };
 		FFD95193205DC525006724C2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95192205DC525006724C2 /* MapViewController.swift */; };
 		FFD95195205DC537006724C2 /* WheatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95194205DC537006724C2 /* WheatherViewController.swift */; };
 		FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */; };
@@ -28,6 +45,23 @@
 		7C7CC958204D91C2006EBF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C7CC95A204D91C2006EBF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87D158EB75326F12D97767F2 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		953C6C90205F04DB00BF24A4 /* ImageStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStruct.swift; sourceTree = "<group>"; };
+		953C6C93205F04F900BF24A4 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		953C6C95205F050200BF24A4 /* MapManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManagerImplementation.swift; sourceTree = "<group>"; };
+		953C6C97205F053F00BF24A4 /* ViewControllerInitiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerInitiate.swift; sourceTree = "<group>"; };
+		953C6C99205F056B00BF24A4 /* ImageResizeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizeExtensions.swift; sourceTree = "<group>"; };
+		953C6C9B205F059100BF24A4 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		953C6C9D205F05A600BF24A4 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		953C6C9F205F05B100BF24A4 /* MapInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractorInput.swift; sourceTree = "<group>"; };
+		953C6CA1205F05BD00BF24A4 /* MapInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractorOutput.swift; sourceTree = "<group>"; };
+		953C6CA4205F05E600BF24A4 /* GMSAutocompleteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSAutocompleteManager.swift; sourceTree = "<group>"; };
+		953C6CA6205F05F200BF24A4 /* GMSAutocompleteManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSAutocompleteManagerImplementation.swift; sourceTree = "<group>"; };
+		953C6CA9205F061700BF24A4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		953C6CAB205F061F00BF24A4 /* LocationManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerImplementation.swift; sourceTree = "<group>"; };
+		953C6CAD205F064A00BF24A4 /* MapViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInput.swift; sourceTree = "<group>"; };
+		953C6CAF205F065200BF24A4 /* MapViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewOutput.swift; sourceTree = "<group>"; };
+		953C6CB2205F06CE00BF24A4 /* MapConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfigurator.swift; sourceTree = "<group>"; };
+		953C6CB4205F06DD00BF24A4 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
 		FFD95192205DC525006724C2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FFD95194205DC537006724C2 /* WheatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewController.swift; sourceTree = "<group>"; };
 		FFD95196205DC5CC006724C2 /* WheatherAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherAPIManager.swift; sourceTree = "<group>"; };
@@ -86,6 +120,80 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		953C6C8C205F045F00BF24A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				953C6C90205F04DB00BF24A4 /* ImageStruct.swift */,
+			);
+			name = Helpers;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		953C6C8D205F046900BF24A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				953C6C97205F053F00BF24A4 /* ViewControllerInitiate.swift */,
+				953C6C99205F056B00BF24A4 /* ImageResizeExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		953C6C8E205F046F00BF24A4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				953C6C9D205F05A600BF24A4 /* MapInteractor.swift */,
+				953C6C9F205F05B100BF24A4 /* MapInteractorInput.swift */,
+				953C6CA1205F05BD00BF24A4 /* MapInteractorOutput.swift */,
+			);
+			name = Interactor;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		953C6C8F205F047D00BF24A4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				953C6C9B205F059100BF24A4 /* MapPresenter.swift */,
+			);
+			name = Presenter;
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		953C6C92205F04ED00BF24A4 /* MapManager */ = {
+			isa = PBXGroup;
+			children = (
+				953C6C93205F04F900BF24A4 /* MapManager.swift */,
+				953C6C95205F050200BF24A4 /* MapManagerImplementation.swift */,
+			);
+			name = MapManager;
+			path = "New Group3";
+			sourceTree = "<group>";
+		};
+		953C6CA3205F05D600BF24A4 /* GMSManager */ = {
+			isa = PBXGroup;
+			children = (
+				953C6CA4205F05E600BF24A4 /* GMSAutocompleteManager.swift */,
+				953C6CA6205F05F200BF24A4 /* GMSAutocompleteManagerImplementation.swift */,
+			);
+			path = GMSManager;
+			sourceTree = "<group>";
+		};
+		953C6CA8205F060900BF24A4 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				953C6CA9205F061700BF24A4 /* LocationManager.swift */,
+				953C6CAB205F061F00BF24A4 /* LocationManagerImplementation.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		953C6CB1205F06BB00BF24A4 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				953C6CB2205F06CE00BF24A4 /* MapConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		E7E098846CF3B6C96792E962 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +240,16 @@
 		FFD9518E205DC501006724C2 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				953C6CB1205F06BB00BF24A4 /* Configurator */,
+				953C6CA8205F060900BF24A4 /* LocationManager */,
+				953C6CA3205F05D600BF24A4 /* GMSManager */,
+				953C6C92205F04ED00BF24A4 /* MapManager */,
+				953C6C8F205F047D00BF24A4 /* Presenter */,
+				953C6C8E205F046F00BF24A4 /* Interactor */,
+				953C6C8D205F046900BF24A4 /* Extensions */,
+				953C6C8C205F045F00BF24A4 /* Helpers */,
 				FFD95190205DC516006724C2 /* View */,
+				953C6CB4205F06DD00BF24A4 /* AppStoryboards.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -149,6 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				FFD95192205DC525006724C2 /* MapViewController.swift */,
+				953C6CAD205F064A00BF24A4 /* MapViewInput.swift */,
+				953C6CAF205F065200BF24A4 /* MapViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,11 +414,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953C6CAC205F061F00BF24A4 /* LocationManagerImplementation.swift in Sources */,
+				953C6C96205F050200BF24A4 /* MapManagerImplementation.swift in Sources */,
+				953C6CAA205F061700BF24A4 /* LocationManager.swift in Sources */,
 				FFD95197205DC5CC006724C2 /* WheatherAPIManager.swift in Sources */,
 				FFD95199205DC5DA006724C2 /* MapAPIManager.swift in Sources */,
+				953C6C9E205F05A700BF24A4 /* MapInteractor.swift in Sources */,
+				953C6CB5205F06DD00BF24A4 /* AppStoryboards.swift in Sources */,
+				953C6C9C205F059100BF24A4 /* MapPresenter.swift in Sources */,
+				953C6CAE205F064A00BF24A4 /* MapViewInput.swift in Sources */,
+				953C6CB0205F065200BF24A4 /* MapViewOutput.swift in Sources */,
+				953C6CA0205F05B100BF24A4 /* MapInteractorInput.swift in Sources */,
+				953C6CA5205F05E600BF24A4 /* GMSAutocompleteManager.swift in Sources */,
+				953C6C9A205F056B00BF24A4 /* ImageResizeExtensions.swift in Sources */,
 				7C7CC94F204D91C2006EBF80 /* AppDelegate.swift in Sources */,
+				953C6C98205F053F00BF24A4 /* ViewControllerInitiate.swift in Sources */,
 				FFD95193205DC525006724C2 /* MapViewController.swift in Sources */,
+				953C6C94205F04F900BF24A4 /* MapManager.swift in Sources */,
+				953C6C91205F04DB00BF24A4 /* ImageStruct.swift in Sources */,
+				953C6CA2205F05BE00BF24A4 /* MapInteractorOutput.swift in Sources */,
+				953C6CB3205F06CE00BF24A4 /* MapConfigurator.swift in Sources */,
 				FFD95195205DC537006724C2 /* WheatherViewController.swift in Sources */,
+				953C6CA7205F05F200BF24A4 /* GMSAutocompleteManagerImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
