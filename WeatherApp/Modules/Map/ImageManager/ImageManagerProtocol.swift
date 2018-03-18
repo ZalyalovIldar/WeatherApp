@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ImageManagerProtocol {
-    
+
     /// To get image from url
     ///
     /// - Parameters:

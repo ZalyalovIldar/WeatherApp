@@ -12,6 +12,8 @@ import UIKit
 protocol AutoCompleteManagerProtocol {
     
     /// To get AutoCompleteController
+    ///
+    /// - Returns: view controller
     func getAutoCompleteController() -> UIViewController
     
 }

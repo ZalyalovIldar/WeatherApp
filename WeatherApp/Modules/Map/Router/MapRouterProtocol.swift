@@ -18,14 +18,12 @@ protocol MapRouterProtocol {
     
     /// To show alert with auto complete error
     ///
-    /// - Parameters:
-    ///   - message: message in alert
+    /// - Parameter message: message in alert
     func showAutoCompleteErrorAlert(with message: String)
     
     /// To show alert with error
     ///
-    /// - Parameters:
-    ///   - with: message in alert
+    /// - Parameter with: message in alert
     func showErrorAlert(with: String)
     
 }

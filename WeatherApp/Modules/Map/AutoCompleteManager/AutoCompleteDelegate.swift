@@ -14,6 +14,8 @@ protocol AutoCompleteDelegate {
     func didFinishAutoComplete()
     
     /// Show alert if auto complete finished with error
+    ///
+    /// - Parameter message: error message
     func showAutoCompleteError(with message: String)
     
     /// To define city

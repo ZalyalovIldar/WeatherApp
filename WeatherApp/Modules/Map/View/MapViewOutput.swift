@@ -11,15 +11,15 @@ import MapKit
 
 protocol MapViewOutput: class {
     
-    //To get coordinates
+    /// To get coordinates
     func getCoordinates()
     
     /// View lifecycle
     func viewIsReady()
     
-    //To search place after auto complete
+    /// To search place after auto complete
     func searchPlaces()
     
-    //Result of auto complete
+    /// Result of auto complete
     func didFinishAutoComplete()
 }
