@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GMSPlacesClient.provideAPIKey("AIzaSyCoH-fZQ3sTKkc1Cy9wkgQt7GHa2m8D57E")
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let navController = UINavigationController()
+        let initialViewController = MapConfigurator.setupModule()
+        navController.pushViewController(initialViewController!, animated: false)
+        
+        self.window!.rootViewController = navController
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 

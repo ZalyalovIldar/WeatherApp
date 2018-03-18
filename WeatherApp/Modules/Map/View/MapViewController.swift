@@ -7,29 +7,52 @@
 //
 
 import UIKit
+import MapKit
+import GooglePlaces
 
-class MapViewController: UIViewController {
-
+class MapViewController: UIViewController, MapViewInput {
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var presenter: MapPresenter!
+    var resultSearchController: UISearchController = UISearchController()
+    var GMSManager: GMSAutocompleteManager = GMSAutocompleteManagerImplementation()
+    var mapManager: MapManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        GMSManager.configure(with: &resultSearchController)
+        presenter.configure(with: &GMSManager)
+        resultSearchController.searchBar.sizeToFit()
+        navigationItem.titleView = resultSearchController.searchBar
+        definesPresentationContext = true
+        resultSearchController.hidesNavigationBarDuringPresentation = false
+        
+        mapManager.configure(with: mapView)
+        
+        getLocation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getLocation() {
+        presenter.getCurrentLocation()
     }
-    */
-
+    
+    func showCurrentLocationOnMap(with region: MKCoordinateRegion) {
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func showCurrentCityOnMap(with place: GMSPlace) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = place.coordinate
+        annotation.title = place.name
+        
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(place.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
+    
 }
+
+
