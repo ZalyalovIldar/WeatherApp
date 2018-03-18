@@ -15,6 +15,7 @@ class MapInteractor: MapInteractorInput  {
     weak var presenter: MapInteractorOutput!
     var locationManager: LocationManagerProtocol!
     var mapService: MapService!
+    var imageManager: ImageManagerProtocol!
     
     // MARK: - MapInteractorInput
     
@@ -41,8 +42,6 @@ class MapInteractor: MapInteractorInput  {
     }
     
     func getCoatOfArms(url: URL) {
-        //download image
-        
-        
+        imageManager.getImageFromUrl(imageURL: url)
     }
 }

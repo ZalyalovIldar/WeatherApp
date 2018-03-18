@@ -19,4 +19,6 @@ protocol MapViewInput: class {
     
     func setCamera(latitude: Double, longitude: Double, placeName: String, placeFormattedAddress: String?)
     
+    func setCoatOfArmy(image: UIImage)
+    
 }

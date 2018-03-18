@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCompleteDelegate {
+class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCompleteDelegate, ImageManagerDelegate {
     
     weak var view: MapViewInput!
     var router: MapRouterProtocol!
@@ -72,5 +72,11 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
             router.showErrorAlert(with: errorMessage)
         }
     }
-
+    
+    // MARK: - ImageManagerDelegate
+    
+    func getCoatOfArms(image: PhotoModel) {
+        view.setCoatOfArmy(image: image.photo)
+    }
+    
 }

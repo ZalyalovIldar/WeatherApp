@@ -31,6 +31,10 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
         self.mapView.setCamera(camera, animated: true)
     }
     
+    func setCoatOfArmy(image: UIImage) {
+        //set image
+    }
+    
     func setUpMap() {
         
         mapView.showsUserLocation = true

@@ -12,6 +12,9 @@
 		7C7CC954204D91C2006EBF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC952204D91C2006EBF80 /* Main.storyboard */; };
 		7C7CC956204D91C2006EBF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC955204D91C2006EBF80 /* Assets.xcassets */; };
 		7C7CC959204D91C2006EBF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7CC957204D91C2006EBF80 /* LaunchScreen.storyboard */; };
+		C31E9A2A205EBD1F003A4FCB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E9A29205EBD1F003A4FCB /* ImageManager.swift */; };
+		C31E9A2C205EBD31003A4FCB /* ImageManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E9A2B205EBD31003A4FCB /* ImageManagerProtocol.swift */; };
+		C31E9A2E205EBD4B003A4FCB /* ImageManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E9A2D205EBD4B003A4FCB /* ImageManagerDelegate.swift */; };
 		C35E9DDF205AFC52000452F2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DDE205AFC52000452F2 /* LocationManager.swift */; };
 		C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */; };
 		C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */; };
@@ -77,6 +80,9 @@
 		7C7CC955204D91C2006EBF80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7CC958204D91C2006EBF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C7CC95A204D91C2006EBF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31E9A29205EBD1F003A4FCB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		C31E9A2B205EBD31003A4FCB /* ImageManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerProtocol.swift; sourceTree = "<group>"; };
+		C31E9A2D205EBD4B003A4FCB /* ImageManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerDelegate.swift; sourceTree = "<group>"; };
 		C35E9DDE205AFC52000452F2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C35E9DE0205AFC76000452F2 /* LocationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerProtocol.swift; sourceTree = "<group>"; };
 		C35E9DE2205B1A1B000452F2 /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +200,16 @@
 				CB57C893204FD45500B84F39 /* Commons */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		C31E9A28205EBCFB003A4FCB /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				C31E9A29205EBD1F003A4FCB /* ImageManager.swift */,
+				C31E9A2B205EBD31003A4FCB /* ImageManagerProtocol.swift */,
+				C31E9A2D205EBD4B003A4FCB /* ImageManagerDelegate.swift */,
+			);
+			path = ImageManager;
 			sourceTree = "<group>";
 		};
 		C35E9DDD205AFC1A000452F2 /* LocationManager */ = {
@@ -330,6 +346,7 @@
 		CB57C895204FD4DC00B84F39 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				C31E9A28205EBCFB003A4FCB /* ImageManager */,
 				C36A7BF2205DBDD20048097B /* Services */,
 				C37F77FD205C2FA500F613C2 /* AutoCompleteManager */,
 				C35E9DDD205AFC1A000452F2 /* LocationManager */,
@@ -660,8 +677,10 @@
 				C36A7BF4205DBDEB0048097B /* MapService.swift in Sources */,
 				C37ECE122052FA850092D02E /* MapRouter.swift in Sources */,
 				C35E9DE1205AFC76000452F2 /* LocationManagerProtocol.swift in Sources */,
+				C31E9A2C205EBD31003A4FCB /* ImageManagerProtocol.swift in Sources */,
 				C383CC4D2059CF1500F3AB5F /* MapView.swift in Sources */,
 				C37F7805205C4D6E00F613C2 /* AutoCompleteDelegate.swift in Sources */,
+				C31E9A2A205EBD1F003A4FCB /* ImageManager.swift in Sources */,
 				FF6BF4762051D4D900FB81A2 /* GetLocationWeatherRequest.swift in Sources */,
 				CB22521B205196C500FF636A /* WeatherInfo.swift in Sources */,
 				CB67AFF5205174320024BB75 /* WeatherService.swift in Sources */,
@@ -682,6 +701,7 @@
 				C383CC4B2059CDD600F3AB5F /* PinView.swift in Sources */,
 				CB67AFFB205174950024BB75 /* Request.swift in Sources */,
 				CB57C8B82050646300B84F39 /* WeatherConfigurator.swift in Sources */,
+				C31E9A2E205EBD4B003A4FCB /* ImageManagerDelegate.swift in Sources */,
 				C37ECE0C2052FA380092D02E /* MapInteractorInput.swift in Sources */,
 				C35E9DE3205B1A1B000452F2 /* LocationDelegate.swift in Sources */,
 				CB57C8BC205064EB00B84F39 /* WeatherRouter.swift in Sources */,
