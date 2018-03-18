@@ -18,6 +18,8 @@ class PinView: NSObject, MKAnnotation {
         let currentCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
         self.coordinate = currentCoordinate
         self.title = title
+        let view = MKAnnotationView()
+        
     }
     
 }

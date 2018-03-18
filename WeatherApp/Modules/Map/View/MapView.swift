@@ -75,11 +75,12 @@ class MapView: UIViewController, MKMapViewDelegate, MapViewInput {
     
     // MARK: - MKMapViewDelegate
     
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let view = MKPinAnnotationView()
-//        view.pinTintColor = UIColor.blue
-//        return view
-//    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let view = MKPinAnnotationView()
+        view.pinTintColor = UIColor.blue
+        
+        return view
+    }
     
 }
 

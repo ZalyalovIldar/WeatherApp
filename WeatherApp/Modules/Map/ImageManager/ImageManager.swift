@@ -11,11 +11,11 @@ import SDWebImage
 
 class ImageManager: ImageManagerProtocol {
     
-    var presenter: ImageManagerDelegate
+    var delegate: ImageManagerDelegate
     var manager: SDWebImageManager!
     
     init(delegate: ImageManagerDelegate) {
-        self.presenter = delegate
+        self.delegate = delegate
         self.manager = SDWebImageManager.shared()
     }
     
@@ -26,7 +26,7 @@ class ImageManager: ImageManagerProtocol {
                                                     completed: { (image, data, error, finished) in
                                                         if (finished && error == nil), let image = image {
                                                             let photoModel = PhotoModel(photo: image)
-                                                            self.presenter.getCoatOfArms(image: photoModel)
+                                                            self.delegate.getCoatOfArms(image: photoModel)
                                                         }
         })
     }

@@ -58,7 +58,7 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
     }
     
     func cityIsDefined(name: String) {
-        interactor.setCity(name)
+        interactor.getCoatOfArms(of: name)
     }
     
     // MARK: - MapInteractorOutput
@@ -67,7 +67,7 @@ class MapPresenter: MapViewOutput, MapInteractorOutput, LocationDelegate, AutoCo
         switch response {
         case .success(let mapInfo):
             guard let contentURL = mapInfo.value.first?.contentUrl else { return }
-            interactor.getCoatOfArms(url: contentURL)
+            interactor.getCoatOfArmsImage(from: contentURL)
         case .error(let errorMessage):
             router.showErrorAlert(with: errorMessage)
         }

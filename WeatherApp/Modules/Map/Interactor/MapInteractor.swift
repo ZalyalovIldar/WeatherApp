@@ -10,8 +10,6 @@ import Foundation
 
 class MapInteractor: MapInteractorInput  {
     
-    private var currentCity: String?
-    
     weak var presenter: MapInteractorOutput!
     var locationManager: LocationManagerProtocol!
     var mapService: MapService!
@@ -23,12 +21,7 @@ class MapInteractor: MapInteractorInput  {
         locationManager.getCurrentLocation()
     }
     
-    func setCity(_ city: String) {
-        currentCity = city
-    }
-    
-    func getCoatOfArmsOfCity() {
-        guard let city = currentCity else { return }
+    func getCoatOfArms(of city: String) {
         let request = GetCoatOfArmsRequest(city: city)
         
         mapService.getCoatOfArms(with: request) { [weak self] (response) in
@@ -41,7 +34,7 @@ class MapInteractor: MapInteractorInput  {
         }
     }
     
-    func getCoatOfArms(url: URL) {
+    func getCoatOfArmsImage(from url: URL) {
         imageManager.getImageFromUrl(imageURL: url)
     }
 }
