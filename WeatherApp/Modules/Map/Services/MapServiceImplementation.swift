@@ -15,6 +15,10 @@ class MapServiceImplementation: MapService {
     let dataErrorMessage = "Ошибка при получении данных"
     let coatOfArmsUrlKey = "contentUrl"
     
+    init(with apiProvider: ApiProvider) {
+        self.apiProvider = apiProvider
+    }
+    
     func getCoatOfArms(with request: Request, completionBlock: @escaping (Response<MapInfo>) -> Void) {
         apiProvider.makeRequest(with: request) { [weak self] (data) in
             guard let strongSelf = self else { return }

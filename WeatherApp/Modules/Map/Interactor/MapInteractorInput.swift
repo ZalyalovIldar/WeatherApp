@@ -14,4 +14,6 @@ protocol MapInteractorInput {
     
     func setCity(_ city: String)
     
+    func getCoatOfArms(url: URL)
+    
 }

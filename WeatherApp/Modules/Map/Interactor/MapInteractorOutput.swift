@@ -9,9 +9,7 @@
 import Foundation
 
 protocol MapInteractorOutput: class {
-    
-    func getCoatOfArmsSuccess(with: MapInfo)
-    
-    func getCoatOfArmsFailure(with message: String)
+        
+    func getCoatOfArmsResult(with response: Response<MapInfo>)
     
 }

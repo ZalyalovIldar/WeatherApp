@@ -32,19 +32,17 @@ class MapInteractor: MapInteractorInput  {
         
         mapService.getCoatOfArms(with: request) { [weak self] (response) in
             guard let strongSelf = self else { return }
-            strongSelf.preparePresenter(with: response)
-        }
-    }
-    
-    private func preparePresenter(with response: Response<MapInfo>) {
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else { return }
-            switch response {
-            case .success(let mapInfo):
-                strongSelf.presenter.getCoatOfArmsSuccess(with: mapInfo)
-            case .error(let errorMessage): strongSelf.presenter.getCoatOfArmsFailure(with: errorMessage)
+            
+            DispatchQueue.main.async {
+                strongSelf.presenter.getCoatOfArmsResult(with: response)
             }
+            
         }
     }
     
+    func getCoatOfArms(url: URL) {
+        //download image
+        
+        
+    }
 }
