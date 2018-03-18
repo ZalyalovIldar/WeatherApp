@@ -12,15 +12,24 @@ import MapKit
 class MapManagerImplemetnation: NSObject, MapManager {
     
     var queryManager: GoogleQueryApiManager!
+    var delegate: MapButtonDelegate?
     
     func configure(with mapView: MKMapView) {
         mapView.delegate = self
+    }
+    
+    init(delegate: MapButtonDelegate) {
+        self.delegate = delegate
+    }
+    
+    @objc func onButtonClick() {
+        delegate?.onMapButtonClick()
     }
 }
 
 extension MapManagerImplemetnation: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         var av = mapView.dequeueReusableAnnotationView(withIdentifier: "id")
         if av == nil {
@@ -48,7 +57,8 @@ extension MapManagerImplemetnation: MKMapViewDelegate {
             let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
             button.setBackgroundImage(UIImage(named: "arrow"), for: .normal)
             //button.setTitle(">", for: .normal)
-            button.addTarget(self, action: "getDirections", for: .touchUpInside)
+            button.addTarget(self, action: #selector(onButtonClick), for: .touchUpInside)
+            
             av!.rightCalloutAccessoryView = button
             //myView.backgroundColor = .green
             
@@ -87,4 +97,5 @@ extension MapManagerImplemetnation: MKMapViewDelegate {
         //
         //        return anView
     }
+    
 }

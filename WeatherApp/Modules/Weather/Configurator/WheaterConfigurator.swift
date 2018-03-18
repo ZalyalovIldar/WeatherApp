@@ -10,8 +10,7 @@ import Foundation
 
 class WeatherConfigurator {
     
-    func setupModule(with viewController: WheatherViewController) {
-        
+    static func setupModule(with viewController: inout WheatherViewController) -> WeatherModuleInput {
         let presenter = WheatherPresenter()
         let interactor = WheatherInteractor()
         let wheatherApiManager = WheatherAPIManager()
@@ -24,6 +23,7 @@ class WeatherConfigurator {
         interactor.presenter = presenter
         interactor.wheaterApiManager = wheatherApiManager
         
+        return presenter
     }
     
 }

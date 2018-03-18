@@ -9,10 +9,10 @@
 import Foundation
 import GooglePlaces
 
-class WheatherPresenter: WheatherViewOutput, WheatherInteractorOutput {
+class WheatherPresenter: WheatherViewOutput, WheatherInteractorOutput, WeatherModuleInput {
 
     weak var view: WheaterViewInput!
-    weak var interactor: WheatherInteractorInput!
+    var interactor: WheatherInteractorInput!
     
     func setAllData(to place: GMSPlace) {
         interactor.getAllInfo(from: place)
@@ -20,9 +20,9 @@ class WheatherPresenter: WheatherViewOutput, WheatherInteractorOutput {
     
     func didFinishingLoadingInformation(with wheather: WeatherInfo) {
         
-        let temperature = String(describing: wheather.hourly.data.first?.temperature)
-        let sunrise = String(describing: wheather.daily.data.first?.sunriseTime)
-        let sunset = String(describing: wheather.daily.data.first?.sunsetTime)
+        let temperature = String(describing: wheather.hourly?.data?.first?.temperature)
+        let sunrise = String(describing: wheather.daily?.data?.first?.sunriseTime)
+        let sunset = String(describing: wheather.daily?.data?.first?.sunsetTime)
         
         view.setTemperatureLabel(with: temperature)
         view.setSunriseLabel(with: sunrise)
@@ -36,5 +36,10 @@ class WheatherPresenter: WheatherViewOutput, WheatherInteractorOutput {
     func didFinishingSetCityInfo(with city: String) {
         view.setCityNameLabel(with: city)
     }
+    
+    func setPlace(_ place: GMSPlace) {
+        view.setPlace(place)
+    }
+    
 
 }

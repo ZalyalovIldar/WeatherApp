@@ -47,6 +47,8 @@
 		FFD951BE205EE799006724C2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951BD205EE799006724C2 /* Image.swift */; };
 		FFD951C0205F0BEF006724C2 /* GoogleQueryApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */; };
 		FFD951C2205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */; };
+		FFD951C4205F11CB006724C2 /* WeatherModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951C3205F11CB006724C2 /* WeatherModuleInput.swift */; };
+		FFD951C7205F1508006724C2 /* MapButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD951C6205F1508006724C2 /* MapButtonDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		FFD951BD205EE799006724C2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FFD951BF205F0BEF006724C2 /* GoogleQueryApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleQueryApiManager.swift; sourceTree = "<group>"; };
 		FFD951C1205F0C19006724C2 /* GoogleQueryApiManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleQueryApiManagerImplementation.swift; sourceTree = "<group>"; };
+		FFD951C3205F11CB006724C2 /* WeatherModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModuleInput.swift; sourceTree = "<group>"; };
+		FFD951C6205F1508006724C2 /* MapButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtonDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				953C6C90205F04DB00BF24A4 /* ImageStruct.swift */,
+				FFD951C6205F1508006724C2 /* MapButtonDelegate.swift */,
 			);
 			name = Helpers;
 			path = "New Group";
@@ -333,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD951B3205ED7BE006724C2 /* WheatherPresenter.swift */,
+				FFD951C3205F11CB006724C2 /* WeatherModuleInput.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -538,8 +544,10 @@
 				953C6C91205F04DB00BF24A4 /* ImageStruct.swift in Sources */,
 				953C6CA2205F05BE00BF24A4 /* MapInteractorOutput.swift in Sources */,
 				953C6CB3205F06CE00BF24A4 /* MapConfigurator.swift in Sources */,
+				FFD951C4205F11CB006724C2 /* WeatherModuleInput.swift in Sources */,
 				FFD95195205DC537006724C2 /* WheatherViewController.swift in Sources */,
 				953C6CA7205F05F200BF24A4 /* GMSAutocompleteManagerImplementation.swift in Sources */,
+				FFD951C7205F1508006724C2 /* MapButtonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

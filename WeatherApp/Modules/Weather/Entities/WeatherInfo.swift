@@ -12,23 +12,23 @@ struct WeatherInfo: Codable {
     
     struct Hourly: Codable {
         struct Data: Codable {
-            let temperature: Double
+            let temperature: Double?
         }
         
-        let data: [Data]
+        let data: [Data]?
     }
 
-    let hourly: Hourly
+    let hourly: Hourly?
     
     struct Daily: Codable {
         struct Data: Codable {
-            let sunriseTime: Int64
-            let sunsetTime: Int64
-            let icon: String
+            let sunriseTime: Int?
+            let sunsetTime: Int?
+            let icon: String?
         }
         
-        let data: [Data]
+        let data: [Data]?
     }
     
-    let daily: Daily
+    let daily: Daily?
 }

@@ -62,7 +62,7 @@ class WheatherAPIManager: WheatherAPIManagerProtocol {
     
     func getWheaterInfo(with place: Coordinates, completionBlock: @escaping (WeatherInfo) -> ()) {
         
-        guard let url = URL(string: "https://api.darksky.net/forecast/\(weatherApiKey))/\(place.latitude),\(place.longitude)") else { return }
+        guard let url = URL(string: "https://api.darksky.net/forecast/\(weatherApiKey)/\(place.latitude),\(place.longitude)") else { return }
         
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in

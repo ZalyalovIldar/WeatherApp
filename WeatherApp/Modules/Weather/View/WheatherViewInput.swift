@@ -6,7 +6,7 @@
 //  Copyright © 2018 iOSLab. All rights reserved.
 //
 
-import Foundation
+import GooglePlaces
 import UIKit
 
 protocol WheaterViewInput: class {
@@ -17,4 +17,5 @@ protocol WheaterViewInput: class {
     func setSunsetLabel(with sunset: String)
     func setSunriseLabel(with sunrise: String)
     func setWheaterLabel(with wheater: String)
+    func setPlace(_ place: GMSPlace)
 }

@@ -12,7 +12,7 @@ import GooglePlaces
 class WheatherInteractor: WheatherInteractorInput {
 
     weak var presenter: WheatherInteractorOutput!
-    weak var wheaterApiManager: WheatherAPIManagerProtocol!
+    var wheaterApiManager: WheatherAPIManagerProtocol!
     
     let sight = " достопримечательность"
  
@@ -26,15 +26,21 @@ class WheatherInteractor: WheatherInteractorInput {
     func getCityPhoto(from place: GMSPlace) {
         let cityName = place.name
         let queryString = cityName + sight
-        wheaterApiManager.getFirstImage(with: queryString) { (image) in
-            self.presenter.didFinishingLoadingPhoto(with: CityPhoto(photo: image))
+        wheaterApiManager.getFirstImage(with: queryString) { [weak self] (image) in
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.presenter.didFinishingLoadingPhoto(with: CityPhoto(photo: image))
+            }
         }
     }
     
     func getWheaterInfo(from place: GMSPlace) {
         let coordinates = Coordinates(longitude: place.coordinate.latitude, latitude: place.coordinate.longitude)
         wheaterApiManager.getWheaterInfo(with: coordinates) { (weatherInfo) in
-            self.presenter.didFinishingLoadingInformation(with: weatherInfo)
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.presenter.didFinishingLoadingInformation(with: weatherInfo)
+            }
         }
     }
     

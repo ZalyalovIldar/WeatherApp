@@ -18,7 +18,7 @@ class MapConfigurator {
         let interactor = MapInteractor()
         let locationManager = LocationManagerImplementation()
         let GMSManager = GMSAutocompleteManagerImplementation()
-        let mapManager = MapManagerImplemetnation()
+        let mapManager = MapManagerImplemetnation(delegate: viewController)
         let queryManager = GoogleQueryApiManagerImplementation()
         
         mapManager.queryManager = queryManager

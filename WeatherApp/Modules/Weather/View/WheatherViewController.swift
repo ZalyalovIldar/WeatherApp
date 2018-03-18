@@ -23,8 +23,12 @@ class WheatherViewController: UIViewController, WheaterViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let currentPlace = place else { return }
-        presenter.setAllData(to: currentPlace)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let place = self.place else { return }
+        presenter.setAllData(to: place)
     }
     
     func setCityNameLabel(with name: String) {
@@ -49,6 +53,10 @@ class WheatherViewController: UIViewController, WheaterViewInput {
     
     func setWheaterLabel(with wheater: String) {
         weatherLabel.text = wheater
+    }
+    
+    func setPlace(_ place: GMSPlace) {
+        self.place = place
     }
 
 }

@@ -19,6 +19,8 @@ class MapViewController: UIViewController, MapViewInput {
     var GMSManager: GMSAutocompleteManager = GMSAutocompleteManagerImplementation()
     var mapManager: MapManager!
     
+    var currentPlace: GMSPlace?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +53,20 @@ class MapViewController: UIViewController, MapViewInput {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(place.coordinate, span)
         mapView.setRegion(region, animated: true)
+        
+        self.currentPlace = place
+    }
+    
+}
+
+extension MapViewController: MapButtonDelegate {
+    
+    func onMapButtonClick() {
+        guard let place = currentPlace else { return }
+        var viewController = WheatherViewController.instantiate(fromAppStoryboard: .main)
+        let moduleInput = WeatherConfigurator.setupModule(with: &viewController)
+        moduleInput.setPlace(place)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
