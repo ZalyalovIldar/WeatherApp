@@ -11,7 +11,7 @@ import GooglePlaces
 
 protocol WheatherInteractorOutput: class {
     
-    func didFinishingLoadingInformation(with wheather: WeatherInfo)
+    func didFinishingLoadingInformation(with wheather: CorrectWeatherInfo)
     func didFinishingLoadingPhoto(with photo: CityPhoto)
     func didFinishingSetCityInfo(with city: String)
 }
