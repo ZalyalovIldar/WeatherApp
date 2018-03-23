@@ -18,11 +18,13 @@ class WheatherPresenter: WheatherViewOutput, WheatherInteractorOutput, WeatherMo
         interactor.getAllInfo(from: place)
     }
     
-    func didFinishingLoadingInformation(with wheather: WeatherInfo) {
+    func didFinishingLoadingInformation(with wheather: CorrectWeatherInfo) {
+        let roundedTemperature = wheather.temperature.rounded(toPlaces: 1)
         
-        let temperature = String(describing: wheather.hourly?.data?.first?.temperature)
-        let sunrise = String(describing: wheather.daily?.data?.first?.sunriseTime)
-        let sunset = String(describing: wheather.daily?.data?.first?.sunsetTime)
+        let temperature = "\(String(wheather.temperature.rounded(toPlaces: 1))) °С"
+        //let temperature = String(describing: roundedTemperature)
+        let sunrise = "Время восхода: \(wheather.sunrise)"
+        let sunset = "Время захода: \(wheather.sunset)"
         
         view.setTemperatureLabel(with: temperature)
         view.setSunriseLabel(with: sunrise)

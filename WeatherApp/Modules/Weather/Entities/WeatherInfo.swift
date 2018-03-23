@@ -12,7 +12,7 @@ struct WeatherInfo: Codable {
     
     struct Hourly: Codable {
         struct Data: Codable {
-            let temperature: Double?
+            var temperature: Double?
         }
         
         let data: [Data]?
